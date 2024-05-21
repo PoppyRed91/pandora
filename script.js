@@ -152,11 +152,12 @@ function rotateToFront() {
 
 function zoomIntoBox() {
     requestAnimationFrame(zoomIntoBox)
+    let speedMultiplier = 2
     if (camera.position.z > -0.5) {
-        camera.position.z -= 0.0001
-        camera.position.y -= 0.00003
-        ambientLight.intensity -= 0.0001
-        directLight.intensity -= 0.0001
+        camera.position.z -= 0.0001 * speedMultiplier
+        camera.position.y -= 0.00003 * speedMultiplier
+        ambientLight.intensity -= 0.0001 * speedMultiplier
+        directLight.intensity -= 0.0001 * speedMultiplier
     } else {
         startStory()
         return;
@@ -178,6 +179,8 @@ function update() {
     startStory function gets called once the box zooms in, lights go down. 
     it will set the display of the div in which the scene is set to "none"
     when we build the first page of the story itself, element should be queried inside this function.
+    
+    ! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
 */
 
 function startStory() {
