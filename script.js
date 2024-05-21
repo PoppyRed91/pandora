@@ -58,6 +58,8 @@ function onPointerMove(event) {
 
 }
 
+// adding eventListener / raycaster
+
 window.addEventListener("pointermove", onPointerMove)
 
 window.addEventListener("click", startStory)
