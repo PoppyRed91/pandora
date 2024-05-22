@@ -44,9 +44,19 @@ const pandorasBox = new THREE.Scene;
 let isBoxClicked = false;
 let box_body;
 let box_lid
+let temple;
 camera.position.setZ(7)
 camera.position.setY(3)
 
+loader.load("Temple/scene.gltf", function (gltf) {
+    temple = gltf.scene;
+    temple.position.setY(-2)
+    temple.rotateY(5)
+    temple.scale.set(2, 2, 2)
+    scene.add(temple)
+}, undefined, function (error) {
+    console.log(error)
+})
 loader.load("P_Lid/scene.gltf", function (gltf) {
     box_lid = gltf.scene;
     pandorasBox.add(box_lid)
@@ -190,3 +200,4 @@ function startStory() {
 
 
 update()
+
