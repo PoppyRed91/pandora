@@ -4,21 +4,34 @@
   background-size: 100vw 100vh;
 }
 
+/* RESET */
+* {
+  padding:0;
+  margin:0;
+}
+
+
 /* SCENE 4 */
+.scene-4-5-background{
+  background-color: black;
+}
 
 .scene-4-container{
   position:relative;
   width:100%;
+  margin-top:5rem;
+  margin-bottom: 5rem;
 }
 
 #scene-4-background {
   position: relative;
+  width:100%;
 }
 
 #scene-4-pandora {
   position: absolute;
-  top:160px;
-  right:200px;
+  top:177px;
+  right:100px;
 }
 
 /* SCENE 5 */
@@ -29,6 +42,7 @@
 
 #scene-5-background {
   position: relative;
+  width:100%;
 }
 
 #scene-5-pandora {
