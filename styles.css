@@ -3,3 +3,15 @@
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
+
+/* SCENE 5 */
+
+#scene-5-background {
+  position: relative;
+}
+
+#scene-5-pandora {
+  position: absolute;
+  top: 220px;
+  right: 100px;
+}
