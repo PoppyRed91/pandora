@@ -4,7 +4,28 @@
   background-size: 100vw 100vh;
 }
 
+/* SCENE 4 */
+
+.scene-4-container{
+  position:relative;
+  width:100%;
+}
+
+#scene-4-background {
+  position: relative;
+}
+
+#scene-4-pandora {
+  position: absolute;
+  top:160px;
+  right:200px;
+}
+
 /* SCENE 5 */
+
+.scene-5-container{
+  position:relative;
+}
 
 #scene-5-background {
   position: relative;
@@ -12,6 +33,6 @@
 
 #scene-5-pandora {
   position: absolute;
-  top: 220px;
-  right: 100px;
+  top:210px;
+  right:200px;
 }
