@@ -1,5 +1,22 @@
 #pandoras-box-container {
+  position: relative;
   background-image: url("background2.png");
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
+  z-index: -10;
+}
+
+.homepage-title {
+  position: absolute;
+  text-transform: uppercase;
+  font-family: "Jim Nightshade", cursive;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 6rem;
+  color: black;
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(82, 69, 12),
+    0 0 5px rgb(46, 28, 4);
+  z-index: 10;
+  margin-top: 40vh;
+  margin-left: 13vw;
 }

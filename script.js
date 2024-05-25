@@ -14,9 +14,9 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 //  lights setup
 
-const directLight = new THREE.DirectionalLight(new THREE.Color(0xffffff), 10)
-const ambientLight = new THREE.AmbientLight(new THREE.Color(0xffffff), 5)
-const spotLight = new THREE.SpotLight(new THREE.Color(0xffffff), 100)
+const directLight = new THREE.DirectionalLight(new THREE.Color(0xcc8800), 5)
+const ambientLight = new THREE.AmbientLight(new THREE.Color(0xf2f2f2), 5)
+const spotLight = new THREE.SpotLight(new THREE.Color(0xb35900), 100)
 spotLight.position.setY(150)
 
 /*
@@ -44,15 +44,11 @@ const pandorasBox = new THREE.Scene;
 let isBoxClicked = false;
 let box_body;
 let box_lid
-let temple;
+
 camera.position.setZ(7)
 camera.position.setY(3)
 
-loader.load("Temple/scene.gltf", function (gltf) {
-    temple = gltf.scene;
-    temple.position.setY(-2)
-    temple.rotateY(5)
-    temple.scale.set(2, 2, 2)
+loader.load("background2.png", function (gltf) {
     scene.add(temple)
 }, undefined, function (error) {
     console.log(error)
