@@ -88,6 +88,10 @@ function onPointerMove(event) {
 
 }
 
+
+const title = document.querySelector(".homepage-title")
+
+
 // adding eventListener
 
 window.addEventListener("pointermove", onPointerMove)
@@ -123,7 +127,11 @@ function startStorySetup() {
     After the user clicks on the box, and the box rotate to front, lid should open - setting the rotation
 */
 
+
+
 function openBox() {
+    title.setAttribute("class", "homepage-title-animated")
+
     requestAnimationFrame(openBox);
 
     if (box_lid.rotation.z < 1) {
@@ -132,6 +140,8 @@ function openBox() {
     } else {
         isBoxOpen = true;
     }
+
+
 }
 
 // function which will rotate the box to front once the user clicks on it
@@ -168,6 +178,7 @@ function zoomIntoBox() {
         startStory()
         return;
     }
+
 }
 
 // elementary rotation of the box when the page loads

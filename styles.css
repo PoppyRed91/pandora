@@ -17,6 +17,35 @@
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(82, 69, 12),
     0 0 5px rgb(46, 28, 4);
   z-index: 10;
-  margin-top: 40vh;
-  margin-left: 13vw;
+  margin-top: 30vh;
+  margin-left: 15vw;
+}
+
+.homepage-title-animated {
+  position: absolute;
+  animation: titleAnimation ease 3s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  text-transform: uppercase;
+  font-family: "Jim Nightshade", cursive;
+  font-weight: 550;
+  font-style: normal;
+  font-size: 6rem;
+  color: black;
+  z-index: 10;
+}
+
+@keyframes titleAnimation {
+  0% {
+    text-shadow: 1px 1px 2px black, 0 0 25px rgb(82, 69, 12),
+      0 0 5px rgb(46, 28, 4);
+    margin-top: 30vh;
+    margin-left: 15vw;
+  }
+  100% {
+    text-shadow: 1px 1px 2px rgb(212, 131, 25), 0 0 25px rgb(175, 121, 54),
+      0 0 5px rgb(113, 71, 16);
+    margin-top: 30vh;
+    margin-left: 35vw;
+  }
 }
