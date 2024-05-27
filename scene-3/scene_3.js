@@ -72,7 +72,7 @@ class Ball {
     this.start = {
       x: mouse.x + getRandomInt(-20, 20),
       y: mouse.y + getRandomInt(-20, 20),
-      size: getRandomInt(10, 20), // size range
+      size: getRandomInt(10, 13),
     };
     this.end = {
       x: this.start.x + getRandomInt(-300, 300),
@@ -84,7 +84,7 @@ class Ball {
     this.size = this.start.size;
 
     this.color = rgb[getRandomInt(0, rgb.length - 1)];
-    this.opacity = 0.7;
+    this.opacity = 0.5;
 
     this.time = 0;
     this.ttl = 120;
@@ -100,7 +100,7 @@ class Ball {
       this.size
     );
     gradient.addColorStop(0, `rgba(${this.color}, ${this.opacity})`);
-    gradient.addColorStop(0.8, `rgba(${this.color}, ${this.opacity * 0.2})`);
+    gradient.addColorStop(0.8, `rgba(${this.color}, ${this.opacity * 0.6})`);
     gradient.addColorStop(1, `rgba(${this.color}, 0)`);
 
     ctx.fillStyle = gradient;
@@ -113,9 +113,10 @@ class Ball {
   update() {
     if (this.time <= this.ttl) {
       let progress = 1 - (this.ttl - this.time) / this.ttl;
-      this.size = this.start.size * (1 - easeOutQuart(progress));
-      this.x += (this.end.x - this.x) * 0.01;
-      this.y += (this.end.y - this.y) * 0.01;
+      let easedProgress = easeOutQuart(progress);
+      this.size = this.start.size * (1.5 - easedProgress);
+      this.x += (this.end.x - this.x) * 0.02;
+      this.y += (this.end.y - this.y) * 0.02;
     }
     this.time++;
   }
