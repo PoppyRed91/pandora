@@ -14,11 +14,23 @@
   font-style: normal;
   font-size: 6rem;
   color: black;
-  text-shadow: 1px 1px 2px black, 0 0 25px rgb(82, 69, 12),
-    0 0 5px rgb(46, 28, 4);
+  text-shadow: 1px 1px 2px black, 0 0 25px rgb(171, 109, 22),
+    0 0 5px rgb(118, 72, 12);
   z-index: 10;
   margin-top: 30vh;
   margin-left: 15vw;
+  opacity: 0;
+  animation: firstTitleAnimation ease-in 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes firstTitleAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .homepage-title-animated {
