@@ -203,3 +203,53 @@ update()
 
 // SCENE 4 BELOW
 
+// SCENE 4 BELOW
+
+gsap.to("#scene-4-pandora", {
+  scrollTrigger: {
+    trigger: "#scene-4-pandora",
+    start: "top bottom", // When the top of the element hits the center of the viewport
+    end: "middle bottom", // When the bottom of the element hits the top of the viewport
+    scrub: 1, // Smoothly scrubs the animation
+  },
+  x: -50,
+  opacity: 0.8,
+  ease: "power3.out",
+});
+
+gsap.to("#scene-4-background", {
+  scrollTrigger: {
+    trigger: "#scene-4-background",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+  opacity: 1,
+  scale: 1.1,
+  ease: "power3.out",
+});
+
+// SCENE 5 BELOW
+
+gsap.to("#scene-5-pandora", {
+  scrollTrigger: {
+    trigger: "#scene-5-pandora",
+    start: "top bottom",
+    end: "middle top",
+    scrub: 1,
+  },
+  opacity: 0.8,
+  ease: "power3.out",
+});
+
+gsap.to("#scene-5-background", {
+  scrollTrigger: {
+    trigger: "#scene-5-background",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: 1,
+  },
+  opacity: 0.8,
+  x: 50,
+  ease: "power3.out",
+});
