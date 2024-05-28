@@ -14,9 +14,9 @@ const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerH
 
 //  lights setup
 
-const directLight = new THREE.DirectionalLight(new THREE.Color(0xffffff), 10)
-const ambientLight = new THREE.AmbientLight(new THREE.Color(0xffffff), 5)
-const spotLight = new THREE.SpotLight(new THREE.Color(0xffffff), 100)
+const directLight = new THREE.DirectionalLight(new THREE.Color(0xcc8800), 5)
+const ambientLight = new THREE.AmbientLight(new THREE.Color(0xf2f2f2), 5)
+const spotLight = new THREE.SpotLight(new THREE.Color(0xb35900), 100)
 spotLight.position.setY(150)
 
 /*
@@ -44,15 +44,11 @@ const pandorasBox = new THREE.Scene;
 let isBoxClicked = false;
 let box_body;
 let box_lid
-let temple;
+
 camera.position.setZ(7)
 camera.position.setY(3)
 
-loader.load("Temple/scene.gltf", function (gltf) {
-    temple = gltf.scene;
-    temple.position.setY(-2)
-    temple.rotateY(5)
-    temple.scale.set(2, 2, 2)
+loader.load("background2.png", function (gltf) {
     scene.add(temple)
 }, undefined, function (error) {
     console.log(error)
@@ -92,6 +88,10 @@ function onPointerMove(event) {
 
 }
 
+
+const title = document.querySelector(".homepage-title")
+
+
 // adding eventListener
 
 window.addEventListener("pointermove", onPointerMove)
@@ -127,7 +127,11 @@ function startStorySetup() {
     After the user clicks on the box, and the box rotate to front, lid should open - setting the rotation
 */
 
+
+
 function openBox() {
+    title.setAttribute("class", "homepage-title-animated")
+
     requestAnimationFrame(openBox);
 
     if (box_lid.rotation.z < 1) {
@@ -136,6 +140,8 @@ function openBox() {
     } else {
         isBoxOpen = true;
     }
+
+
 }
 
 // function which will rotate the box to front once the user clicks on it
@@ -172,6 +178,7 @@ function zoomIntoBox() {
         startStory()
         return;
     }
+
 }
 
 // elementary rotation of the box when the page loads
