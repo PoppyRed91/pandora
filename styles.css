@@ -17,7 +17,7 @@
   text-shadow: 1px 1px 2px black, 0 0 25px rgb(171, 109, 22),
     0 0 5px rgb(118, 72, 12);
   z-index: 10;
-  margin-top: 30vh;
+  margin-top: 25vh;
   margin-left: 15vw;
   opacity: 0;
   animation: firstTitleAnimation ease-in 3s;
@@ -51,13 +51,13 @@
   0% {
     text-shadow: 1px 1px 2px black, 0 0 25px rgb(82, 69, 12),
       0 0 5px rgb(46, 28, 4);
-    margin-top: 30vh;
+    margin-top: 25vh;
     margin-left: 15vw;
   }
   100% {
     text-shadow: 1px 1px 2px rgb(212, 131, 25), 0 0 25px rgb(175, 121, 54),
       0 0 5px rgb(113, 71, 16);
-    margin-top: 30vh;
+    margin-top: 25vh;
     margin-left: 35vw;
   }
 }
