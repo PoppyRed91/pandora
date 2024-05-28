@@ -9,25 +9,37 @@
   <body>
     <div id="pandoras-box-container"></div>
 
+    <div class="placeholder"></div>
     <!-- SCENE 4 STUFF -->
     <div class="scene-4-5-background">
-      <section class="scene-4-container" id="scene-4-container">
-        <img
-          src="./public/images scene 4/1_background.jpg"
-          alt="Background of a room"
-          height="896px"
-          width="1344px"
-          id="scene-4-background"
-        />
-        <img
-          src="./public/images scene 4/1_cutout.png"
-          alt="Cutout of a woman holding a box"
-          height="720"
-          width="1080px"
-          id="scene-4-pandora"
-        />
-      </section>
+      <div class="scene-4-wrapper">
+        <div class="paragraph-container">
+          <p id="scene-4-paragraph">
+            Pandora was told to keep the box safe but never opened it. Zeus knew that
+            the curiosity will be stronger and that Pandora would eventually open the
+            box.
+          </p>
+        </div>
+        <section class="scene-4-container" id="scene-4-container">
+          <img
+            src="./public/images scene 4/1_background.jpg"
+            alt="Background of a room"
+            height="896px"
+            width="1344px"
+            id="scene-4-background"
+          />
+          <img
+            src="./public/images scene 4/1_cutout.png"
+            alt="Cutout of a woman holding a box"
+            height="720"
+            width="1080px"
+            id="scene-4-pandora"
+          />
+        </section>
+      </div>
       <!--  -->
+
+      <div class="placeholder"></div>
 
       <!-- SCENE 5 STUFF -->
       <section class="scene-5-container" id="scene-5-container">
@@ -41,13 +53,15 @@
         <img
           src="./public/images scene 5/2_cutout.png"
           alt="Cutout of a woman holding a box"
-          height="540"
-          width="1080px"
+          height="680px"
+          width="206px"
           id="scene-5-pandora"
         />
       </section>
     </div>
     <!--  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
     <script type="module" src="./script.js"></script>
   </body>
 </html>
