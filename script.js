@@ -122,6 +122,11 @@ function startStorySetup() {
     console.log("moving to story");
     isBoxClicked = true;
     rotateToFront();
+    document
+      .querySelector(".scene3")
+      .classList.remove(
+        "hidden"
+      ); /*thi makes the scene 3 hidden in the landing page but will show up in the storybase starts */
   }
 }
 
@@ -211,7 +216,7 @@ function startStory() {
       scene3.classList.add("scene-visible");
       scene6.classList.add("scene-visible");
 
-      // Animation to move text from off-screen to the desired position
+      // animation to move text from off-screen to the desired position
       const sceneText = document.getElementById("scene-text1");
       sceneText.classList.add("animate-in");
     },
