@@ -11,15 +11,17 @@
       href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="scene4.css" />
+    <link rel="stylesheet" href="scene5.css" />
   </head>
   <body>
     <div id="pandoras-box-container">
       <h1 class="homepage-title">Pandora's box</h1>
     </div>
 
-      <div class="placeholder"></div> <!-- space between scenes -->
-    
-      <!-- SCENE 4 STUFF -->
+   
+      <!-- SCENE 4 & 5 STUFF -->
+    <div class="placeholder"></div> <!-- space between scenes -->
     <div class="scene-4-5-background">
       <div class="scene-4-wrapper">
         <div class="paragraph-container">
@@ -29,14 +31,14 @@
         </div>
         <section class="scene-4-container" id="scene-4-container">
           <img
-            src="./public/images scene 4/1_background.jpg"
+            src="./public/assets/images scene 4/1_background.jpg"
             alt="Background of a room"
             height="896px"
             width="1344px"
             id="scene-4-background"
           />
           <img
-            src="./public/images scene 4/1_cutout.png"
+            src="./public/assets/images scene 4/1_cutout.png"
             alt="Cutout of a woman holding a box"
             height="720"
             width="1080px"
@@ -50,17 +52,17 @@
       <div class="placeholder"></div> <!-- space between scenes -->
 
       <!-- SCENE 5 STUFF -->
-
+      <div class="scene-5-wrapper">
       <section class="scene-5-container" id="scene-5-container">
         <img
-          src="./public/images scene 5/2_background.jpg"
+          src="./public/assets/images scene 5/2_background.jpg"
           alt="Background of a room"
           height="768px"
           width="1536px"
           id="scene-5-background"
         />
         <img
-          src="./public/images scene 5/2_cutout.png"
+          src="./public/assets/images scene 5/2_cutout.png"
           alt="Cutout of a woman holding a box"
           height="680px"
           width="206px"
@@ -68,7 +70,7 @@
           id="scene-5-pandora"
         />
         <img
-          src="./public/images scene 5/smoke-effect.png"
+          src="./public/assets/images scene 5/smoke-effect.png"
           alt="Image of smoke"
           height="1920px"
           width="1080px"
@@ -82,6 +84,7 @@
     <!-- END SCENE 5 -->
 
       <div class="placeholder"></div> <!-- space between scenes -->
+    </div>
 
     <!-- GSAP LINKS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
@@ -90,5 +93,9 @@
 
     
     <script type="module" src="./script.js"></script>
+
+
+    <script type="module" src="./scene4.js"></script>
+    <script type="module" src="./scene5.js"></script>
   </body>
 </html>

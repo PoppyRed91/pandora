@@ -1,0 +1,56 @@
+/* SCENE 4 */
+.placeholder {
+  background-color: black;
+  height: 100vh;
+}
+
+.scene-4-5-background {
+  background-color: black;
+  width:100vw;
+  overflow:hidden;
+  max-width: 2300px;
+  margin: 0 auto;
+  overflow-x:hidden;
+
+}
+
+.scene-4-wrapper {
+  display: flex;
+  justify-content: space-between;
+  max-width: 2000px;
+  margin: 0 auto;
+  overflow:hidden;
+  margin-right:3rem;
+}
+
+.paragraph-container {
+  width: 30%;
+  margin: auto 0;
+  padding-left: 2rem;
+}
+
+#scene-4-paragraph {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  opacity: 0;
+}
+
+.scene-4-container {
+  width: 80%;
+  overflow: hidden;
+  display: flex;
+  justify-content: right;
+  align-items: end;
+}
+
+#scene-4-background {
+  position: relative;
+  opacity: 0;
+  object-fit: cover;
+}
+
+#scene-4-pandora {
+  position: absolute;
+  opacity: 0;
+}
