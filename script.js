@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { GLTFLoader } from "three/examples/jsm/Addons.js";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 
 const scene = new THREE.Scene();
 
@@ -16,8 +16,7 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-//  lights setup
-
+// lights setup
 const directLight = new THREE.DirectionalLight(new THREE.Color(0xcc8800), 5);
 const ambientLight = new THREE.AmbientLight(new THREE.Color(0xf2f2f2), 5);
 const spotLight = new THREE.SpotLight(new THREE.Color(0xb35900), 100);
@@ -26,10 +25,9 @@ spotLight.position.setY(150);
 /*
     creating renderer instance
     setting color to be transparent so that the background img is visible
-    seting the size of the are we want to render
+    setting the size of the area we want to render
     adding renderer element to div with id #pandoras-box-container
 */
-
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0xffffff, 0);
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -41,11 +39,11 @@ pandorasBoxContainer.appendChild(renderer.domElement);
     making an empty parent for the box_body and the box_lid and attaching it to parent: pandorasBox
     setting the camera position
 */
-
 const loader = new GLTFLoader();
 const pandorasBox = new THREE.Scene();
 
 let isBoxClicked = false;
+let isBoxOpen = false; // Define the variable here
 let box_body;
 let box_lid;
 
@@ -55,7 +53,7 @@ camera.position.setY(3);
 loader.load(
   "background2.png",
   function (gltf) {
-    scene.add(temple);
+    scene.add(gltf.scene);
   },
   undefined,
   function (error) {
@@ -88,19 +86,16 @@ loader.load(
 );
 
 // adding lights to the scene
-
 scene.add(pandorasBox);
 scene.add(directLight);
 scene.add(ambientLight);
 scene.add(spotLight);
 
 // raycaster setup
-
 const pointer = new THREE.Vector2();
 const raycaster = new THREE.Raycaster();
 
 // determining where the pointer is
-
 function onPointerMove(event) {
   pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
   pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -109,26 +104,21 @@ function onPointerMove(event) {
 const title = document.querySelector(".homepage-title");
 
 // adding eventListener
-
 window.addEventListener("pointermove", onPointerMove);
-
 window.addEventListener("click", startStorySetup);
 
 /* 
     determining if we clicked on the box, if yes - startStorySetup function will run and call the rotate to front function
     we want the box to rotate to front when the user clicks on it
 */
-
 function isHittingBox() {
   raycaster.setFromCamera(pointer, camera);
   const intersects = raycaster.intersectObjects(scene.children);
-  if (intersects.length > 0) {
-    return true;
-  } else return false;
+  return intersects.length > 0;
 }
 
 function startStorySetup() {
-  if (isHittingBox() == true) {
+  if (isHittingBox()) {
     console.log("moving to story");
     isBoxClicked = true;
     rotateToFront();
@@ -136,9 +126,8 @@ function startStorySetup() {
 }
 
 /*
-    After the user clicks on the box, and the box rotate to front, lid should open - setting the rotation
+    After the user clicks on the box, and the box rotates to front, the lid should open - setting the rotation
 */
-
 function openBox() {
   title.setAttribute("class", "homepage-title-animated");
 
@@ -153,7 +142,6 @@ function openBox() {
 }
 
 // function which will rotate the box to front once the user clicks on it
-
 function rotateToFront() {
   requestAnimationFrame(rotateToFront);
 
@@ -172,7 +160,6 @@ function rotateToFront() {
     lights also lower so we don't see inside of the model
     when the box zooms to a certain point, startStory function is called
 */
-
 function zoomIntoBox() {
   requestAnimationFrame(zoomIntoBox);
   let speedMultiplier = 2;
@@ -188,7 +175,6 @@ function zoomIntoBox() {
 }
 
 // elementary rotation of the box when the page loads
-
 pandorasBox.rotation.y = -1.55;
 function update() {
   requestAnimationFrame(update);
@@ -205,7 +191,6 @@ function update() {
     
     ! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
 */
-
 function startStory() {
   const pandorasBoxContainer = document.getElementById(
     "pandoras-box-container"
