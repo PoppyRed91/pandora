@@ -233,5 +233,3 @@ function startStory() {
 }
 
 update();
-
-update();
