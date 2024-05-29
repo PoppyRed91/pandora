@@ -1,41 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pandora's box</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="pandoras-box-container">
-      <h1 class="homepage-title">Pandora's box</h1>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pandora's box</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <div id="pandoras-box-container">
+    <h1 class="homepage-title">Pandora's box</h1>
+  </div>
+  <div class="storybase">
+    <div class="scene scene1">
+      <h2 class="scene-text1" id="scene-text1">
+        Prometheus and Epimetheus, Titans who supported Zeus during his battle
+        with the Titans, were given the task of creating creatures on Earth.
+        Epimetheus crafted animals, giving each unique skills and protection.
+        Prometheus shaped man but had no gifts left to give. Prometheus wanted
+        to help mankind and asked Zeus for fire, but Zeus refused. Fire was
+        only for the Gods. Defying Zeus, Prometheus took the fire and gave it
+        to the humans.
+      </h2>
+      <img src="./Zeus.png" class="Zeus" />
     </div>
-    <div class="storybase">
-      <div class="scene scene1">
-        <h2 class="scene-text1" id="scene-text1">
-          Prometheus and Epimetheus, Titans who supported Zeus during his battle
-          with the Titans, were given the task of creating creatures on Earth.
-          Epimetheus crafted animals, giving each unique skills and protection.
-          Prometheus shaped man but had no gifts left to give. Prometheus wanted
-          to help mankind and asked Zeus for fire, but Zeus refused. Fire was
-          only for the Gods. Defying Zeus, Prometheus took the fire and gave it
-          to the humans.
-        </h2>
-        <img src="./Zeus.png" class="Zeus" />
-      </div>
-      <div class="scene scene6">
-        <div class="smoke-container">
-          <img src="closedbox.png" class="closedbox" />
-          <img src="smoke-effect.png" class="smoke-effect" />
-        </div>
+
+    <!-- scene 3 -->
+    <div class="scene scene3">
+
+      <img src="../public/images/scene_3.png" alt="Zes giving the box" id="scene3img">
+      <p class="scene-3-paragraph">Pandora was given to Epimetheus as a wife, despite Prometheus' warning to his
+        brother not to accept gifts from Zeus. Epimetheus, captivated by Pandora’s beauty, married her. As a wedding
+        gift, Zeus gave Pandora a box but warned her never to open it.</p>
+
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+      <div class="particle"></div>
+
+      <canvas class="canvas" id="canvas"></canvas>
+    </div>
+
+    <div class="scene scene6">
+      <div class="smoke-container">
+        <img src="closedbox.png" class="closedbox" />
+        <img src="smoke-effect.png" class="smoke-effect" />
       </div>
     </div>
-    <script type="module" src="./script.js"></script>
-  </body>
+  </div>
+  <script type="module" src="./script.js"></script>
+</body>
+
 </html>
