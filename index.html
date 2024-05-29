@@ -17,15 +17,14 @@
       <h1 class="homepage-title">Pandora's box</h1>
     </div>
 
-    <div class="placeholder"></div>
-    <!-- SCENE 4 STUFF -->
+      <div class="placeholder"></div> <!-- space between scenes -->
+    
+      <!-- SCENE 4 STUFF -->
     <div class="scene-4-5-background">
       <div class="scene-4-wrapper">
         <div class="paragraph-container">
           <p id="scene-4-paragraph">
-            Pandora was told to keep the box safe but never opened it. Zeus knew that
-            the curiosity will be stronger and that Pandora would eventually open the
-            box.
+            Even though she tried to resist it...
           </p>
         </div>
         <section class="scene-4-container" id="scene-4-container">
@@ -44,12 +43,14 @@
             id="scene-4-pandora"
           />
         </section>
+
       </div>
       <!--  -->
 
-      <div class="placeholder"></div>
+      <div class="placeholder"></div> <!-- space between scenes -->
 
       <!-- SCENE 5 STUFF -->
+
       <section class="scene-5-container" id="scene-5-container">
         <img
           src="./public/images scene 5/2_background.jpg"
@@ -63,13 +64,31 @@
           alt="Cutout of a woman holding a box"
           height="680px"
           width="206px"
+          class="scene-5-overlay"
           id="scene-5-pandora"
         />
+        <img
+          src="./public/images scene 5/smoke-effect.png"
+          alt="Image of smoke"
+          height="1920px"
+          width="1080px"
+          class="scene-5-overlay"
+          id="scene-5-smoke"
+          />
+    
       </section>
-    </div>
-    <!--  -->
+      <p id="scene-5-paragraph">...Pandora’s curiosity got the better of her, and she opened the box</p>
+      </div>
+    <!-- END SCENE 5 -->
+
+      <div class="placeholder"></div> <!-- space between scenes -->
+
+    <!-- GSAP LINKS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+    <!-- GSAP LINKS -->
+
+    
     <script type="module" src="./script.js"></script>
   </body>
 </html>
