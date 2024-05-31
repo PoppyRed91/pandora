@@ -148,7 +148,11 @@ function animation() {
 			{ duration: 1, y: 1, onComplete: () => (isBoxOpen = true) },
 			"box_lid"
 		)
-		.to(camera.position, { duration: 2, z: -0.5, y: 1 }, "box_lid");
+		.to(
+			camera.position,
+			{ duration: 2, z: -0.5, y: 1, onComplete: () => startStory() },
+			"box_lid"
+		);
 }
 
 /*
@@ -229,22 +233,22 @@ function startStory() {
 	window.removeEventListener("pointermove", onPointerMove);
 	window.removeEventListener("click", startStorySetup);
 
+	const pandorasBoxContainer = document.getElementById(
+		"pandoras-box-container"
+	);
+	pandorasBoxContainer.classList.add("pandoras-box-container-fadeOut");
 	for (const loop of loops) {
 		cancelAnimationFrame(loop);
 	}
 
 	console.log("endOfLoops");
 
-	const pandorasBoxContainer = document.getElementById(
-		"pandoras-box-container"
-	);
-	pandorasBoxContainer.classList.add("pandoras-box-container-fadeOut");
-
 	pandorasBoxContainer.addEventListener(
 		"animationend",
 		() => {
 			pandorasBoxContainer.style.display = "none";
 			renderer.dispose();
+
 			const storyBase = document.querySelector(".storybase");
 			// const scene1 = storyBase.querySelector(".scene1");
 			// const scene2 = storyBase.querySelector(".scene2");
