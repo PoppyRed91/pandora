@@ -212,24 +212,25 @@ function startStory() {
 			renderer.dispose();
 			cancelAnimationFrame(raf);
 			const storyBase = document.querySelector(".storybase");
-			const scene1 = storyBase.querySelector(".scene1");
+			// const scene1 = storyBase.querySelector(".scene1");
+			// const scene2 = storyBase.querySelector(".scene2");
 			const scene3 = storyBase.querySelector(".scene3");
 			const scene4 = storyBase.querySelector(".scene4");
 			const scene5 = storyBase.querySelector(".scene5");
 			const scene6 = storyBase.querySelector(".scene6");
 
-			scene1.classList.add("scene-visible");
+			// scene1.classList.add("scene-visible");
+			// scene2.classList.add("scene-visible");
 			scene3.classList.add("scene-visible");
 			scene4.classList.add("scene-visible");
 			scene5.classList.add("scene-visible");
 			scene6.classList.add("scene-visible");
 
 			// animation to move text from off-screen to the desired position
-			const sceneText = document.getElementById("scene-text1");
-			sceneText.classList.add("animate-in");
+			// const sceneText = document.getElementById("scene-text1");
+			// sceneText.classList.add("animate-in");
 		},
 		{ once: true }
 	);
 }
-
 update();
