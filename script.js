@@ -1,5 +1,6 @@
 import * as THREE from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
+import { gsap } from "gsap";
 
 const scene = new THREE.Scene();
 
@@ -123,7 +124,7 @@ function startStorySetup() {
 	if (isHittingBox()) {
 		console.log("moving to story");
 		isBoxClicked = true;
-		rotateToFront();
+		animation();
 		document
 			.querySelector(".scene3")
 			.classList.remove(
@@ -132,61 +133,76 @@ function startStorySetup() {
 	}
 }
 
+function animation() {
+	const tl = gsap.timeline({});
+	tl.to(pandorasBox.rotation, {
+		duration: 0.5,
+		y: -1.55,
+		onComplete: () => {
+			title.setAttribute("class", "homepage-title-animated");
+		},
+	})
+		.to(box_lid.rotation, { duration: 1, z: 1 }, "box_lid") // seting this label on both tweens makes them play at the same time ;)
+		.to(
+			box_lid.position,
+			{ duration: 1, y: 1, onComplete: () => (isBoxOpen = true) },
+			"box_lid"
+		)
+		.to(camera.position, { duration: 2, z: -0.5, y: 1 }, "box_lid");
+}
+
 /*
 	After the user clicks on the box, and the box rotates to front, the lid should open - setting the rotation
 */
-function openBox() {
-	title.setAttribute("class", "homepage-title-animated");
+// function openBox() {
+// 	title.setAttribute("class", "homepage-title-animated");
 
-	loops.push(requestAnimationFrame(openBox))
+// 	loops.push(requestAnimationFrame(openBox));
 
-	if (box_lid.rotation.z < 1) {
-		box_lid.rotateZ(0.001);
-		box_lid.position.y += 0.001;
-	} else {
-		isBoxOpen = true;
-		cancelAnimationFrame(openBox)
-	}
-	console.log("openBox")
-}
+// 	if (box_lid.rotation.z < 1) {
+// 		box_lid.rotateZ(0.001);
+// 		box_lid.position.y += 0.001;
+// 	} else {
+// 		isBoxOpen = true;
+// 		cancelAnimationFrame(openBox);
+// 	}
+// 	console.log("openBox");
+// }
 
 // function which will rotate the box to front once the user clicks on it
-function rotateToFront() {
-	loops.push(requestAnimationFrame(rotateToFront));
+// function rotateToFront() {
+// 	loops.push(requestAnimationFrame(rotateToFront));
 
+// 	if (pandorasBox.rotation.y > -1.55) {
+// 		pandorasBox.rotateY(-0.05);
+// 	}
 
-	if (pandorasBox.rotation.y > -1.55) {
-		pandorasBox.rotateY(-0.05);
-	}
-
-	if (pandorasBox.rotation.y <= -1.55) {
-
-		openBox();
-		zoomIntoBox();
-	}
-	console.log("rotateToFront")
-}
+// 	if (pandorasBox.rotation.y <= -1.55) {
+// 		openBox();
+// 		zoomIntoBox();
+// 	}
+// 	console.log("rotateToFront");
+// }
 
 /* 
 	after the rotation is stopped, lid opens, camera will zoom into the box
 	lights also lower so we don't see inside of the model
 	when the box zooms to a certain point, startStory function is called
 */
-function zoomIntoBox() {
-	loops.push(requestAnimationFrame(zoomIntoBox));
-	let speedMultiplier = 2;
-	if (camera.position.z > -0.5) {
-		camera.position.z -= 0.0001 * speedMultiplier;
-		camera.position.y -= 0.00003 * speedMultiplier;
-		ambientLight.intensity -= 0.0001 * speedMultiplier;
-		directLight.intensity -= 0.0001 * speedMultiplier;
-	} else {
-
-		startStory();
-		return;
-	}
-	console.log("zoomIntoBox")
-}
+// function zoomIntoBox() {
+// 	loops.push(requestAnimationFrame(zoomIntoBox));
+// 	let speedMultiplier = 2;
+// 	if (camera.position.z > -0.5) {
+// 		camera.position.z -= 0.0001 * speedMultiplier;
+// 		camera.position.y -= 0.00003 * speedMultiplier;
+// 		ambientLight.intensity -= 0.0001 * speedMultiplier;
+// 		directLight.intensity -= 0.0001 * speedMultiplier;
+// 	} else {
+// 		startStory();
+// 		return;
+// 	}
+// 	console.log("zoomIntoBox");
+// }
 
 // elementary rotation of the box when the page loads
 pandorasBox.rotation.y = -1.55;
@@ -199,7 +215,7 @@ function update() {
 	if (!isBoxClicked) {
 		pandorasBox.rotateY(-0.003);
 	}
-	console.log("update")
+	console.log("update");
 }
 
 /*
@@ -210,8 +226,8 @@ function update() {
 	! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
 */
 function startStory() {
-	window.removeEventListener("pointermove", onPointerMove)
-	window.removeEventListener("click", startStorySetup)
+	window.removeEventListener("pointermove", onPointerMove);
+	window.removeEventListener("click", startStorySetup);
 
 	for (const loop of loops) {
 		cancelAnimationFrame(loop);
