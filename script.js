@@ -4,10 +4,10 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 const scene = new THREE.Scene();
 
 /*
-    field of view: 75 degrees,
-    window.innerWidth/window.innerHeight - aspect ratio
-    near clipping plane - objects closer than 0.1 won't be rendered
-    far clipping plane - objects further from 1000 won't be rendered
+	field of view: 75 degrees,
+	window.innerWidth/window.innerHeight - aspect ratio
+	near clipping plane - objects closer than 0.1 won't be rendered
+	far clipping plane - objects further from 1000 won't be rendered
 */
 const camera = new THREE.PerspectiveCamera(
 	75,
@@ -23,10 +23,10 @@ const spotLight = new THREE.SpotLight(new THREE.Color(0xb35900), 100);
 spotLight.position.setY(150);
 
 /*
-    creating renderer instance
-    setting color to be transparent so that the background img is visible
-    setting the size of the area we want to render
-    adding renderer element to div with id #pandoras-box-container
+	creating renderer instance
+	setting color to be transparent so that the background img is visible
+	setting the size of the area we want to render
+	adding renderer element to div with id #pandoras-box-container
 */
 const renderer = new THREE.WebGLRenderer();
 renderer.setClearColor(0xffffff, 0);
@@ -35,9 +35,9 @@ const pandorasBoxContainer = document.getElementById("pandoras-box-container");
 pandorasBoxContainer.appendChild(renderer.domElement);
 
 /*
-    importing the loader
-    making an empty parent for the box_body and the box_lid and attaching it to parent: pandorasBox
-    setting the camera position
+	importing the loader
+	making an empty parent for the box_body and the box_lid and attaching it to parent: pandorasBox
+	setting the camera position
 */
 const loader = new GLTFLoader();
 const pandorasBox = new THREE.Scene();
@@ -107,9 +107,11 @@ const title = document.querySelector(".homepage-title");
 window.addEventListener("pointermove", onPointerMove);
 window.addEventListener("click", startStorySetup);
 
+let loops = [];
+
 /* 
-    determining if we clicked on the box, if yes - startStorySetup function will run and call the rotate to front function
-    we want the box to rotate to front when the user clicks on it
+	determining if we clicked on the box, if yes - startStorySetup function will run and call the rotate to front function
+	we want the box to rotate to front when the user clicks on it
 */
 function isHittingBox() {
 	raycaster.setFromCamera(pointer, camera);
@@ -131,42 +133,47 @@ function startStorySetup() {
 }
 
 /*
-    After the user clicks on the box, and the box rotates to front, the lid should open - setting the rotation
+	After the user clicks on the box, and the box rotates to front, the lid should open - setting the rotation
 */
 function openBox() {
 	title.setAttribute("class", "homepage-title-animated");
 
-	requestAnimationFrame(openBox);
+	loops.push(requestAnimationFrame(openBox))
 
 	if (box_lid.rotation.z < 1) {
 		box_lid.rotateZ(0.001);
 		box_lid.position.y += 0.001;
 	} else {
 		isBoxOpen = true;
+		cancelAnimationFrame(openBox)
 	}
+	console.log("openBox")
 }
 
 // function which will rotate the box to front once the user clicks on it
 function rotateToFront() {
-	requestAnimationFrame(rotateToFront);
+	loops.push(requestAnimationFrame(rotateToFront));
+
 
 	if (pandorasBox.rotation.y > -1.55) {
 		pandorasBox.rotateY(-0.05);
 	}
 
 	if (pandorasBox.rotation.y <= -1.55) {
+
 		openBox();
 		zoomIntoBox();
 	}
+	console.log("rotateToFront")
 }
 
 /* 
-    after the rotation is stopped, lid opens, camera will zoom into the box
-    lights also lower so we don't see inside of the model
-    when the box zooms to a certain point, startStory function is called
+	after the rotation is stopped, lid opens, camera will zoom into the box
+	lights also lower so we don't see inside of the model
+	when the box zooms to a certain point, startStory function is called
 */
 function zoomIntoBox() {
-	requestAnimationFrame(zoomIntoBox);
+	loops.push(requestAnimationFrame(zoomIntoBox));
 	let speedMultiplier = 2;
 	if (camera.position.z > -0.5) {
 		camera.position.z -= 0.0001 * speedMultiplier;
@@ -174,9 +181,11 @@ function zoomIntoBox() {
 		ambientLight.intensity -= 0.0001 * speedMultiplier;
 		directLight.intensity -= 0.0001 * speedMultiplier;
 	} else {
+
 		startStory();
 		return;
 	}
+	console.log("zoomIntoBox")
 }
 
 // elementary rotation of the box when the page loads
@@ -185,21 +194,31 @@ pandorasBox.rotation.y = -1.55;
 let raf;
 
 function update() {
-	raf = requestAnimationFrame(update);
+	loops.push(requestAnimationFrame(update));
 	renderer.render(scene, camera);
 	if (!isBoxClicked) {
 		pandorasBox.rotateY(-0.003);
 	}
+	console.log("update")
 }
 
 /*
-    startStory function gets called once the box zooms in, lights go down. 
-    it will set the display of the div in which the scene is set to "none"
-    when we build the first page of the story itself, element should be queried inside this function.
+	startStory function gets called once the box zooms in, lights go down. 
+	it will set the display of the div in which the scene is set to "none"
+	when we build the first page of the story itself, element should be queried inside this function.
     
-    ! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
+	! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
 */
 function startStory() {
+	window.removeEventListener("pointermove", onPointerMove)
+	window.removeEventListener("click", startStorySetup)
+
+	for (const loop of loops) {
+		cancelAnimationFrame(loop);
+	}
+
+	console.log("endOfLoops");
+
 	const pandorasBoxContainer = document.getElementById(
 		"pandoras-box-container"
 	);
@@ -210,7 +229,6 @@ function startStory() {
 		() => {
 			pandorasBoxContainer.style.display = "none";
 			renderer.dispose();
-			cancelAnimationFrame(raf);
 			const storyBase = document.querySelector(".storybase");
 			// const scene1 = storyBase.querySelector(".scene1");
 			// const scene2 = storyBase.querySelector(".scene2");
