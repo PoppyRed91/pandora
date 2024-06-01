@@ -11,10 +11,10 @@ const scene = new THREE.Scene();
 	far clipping plane - objects further from 1000 won't be rendered
 */
 const camera = new THREE.PerspectiveCamera(
-	75,
-	window.innerWidth / window.innerHeight,
-	0.1,
-	1000
+  75,
+  window.innerWidth / window.innerHeight,
+  0.1,
+  1000
 );
 
 // lights setup
@@ -52,38 +52,38 @@ camera.position.setZ(7);
 camera.position.setY(3);
 
 loader.load(
-	"background2.png",
-	function (gltf) {
-		scene.add(gltf.scene);
-	},
-	undefined,
-	function (error) {
-		console.log(error);
-	}
+  "background2.png",
+  function (gltf) {
+    scene.add(gltf.scene);
+  },
+  undefined,
+  function (error) {
+    console.log(error);
+  }
 );
 loader.load(
-	"P_Lid/scene.gltf",
-	function (gltf) {
-		box_lid = gltf.scene;
-		pandorasBox.add(box_lid);
-		camera.lookAt(pandorasBox.position);
-	},
-	undefined,
-	function (error) {
-		console.log(error);
-	}
+  "P_Lid/scene.gltf",
+  function (gltf) {
+    box_lid = gltf.scene;
+    pandorasBox.add(box_lid);
+    camera.lookAt(pandorasBox.position);
+  },
+  undefined,
+  function (error) {
+    console.log(error);
+  }
 );
 loader.load(
-	"P_Box/scene.gltf",
-	function (gltf) {
-		box_body = gltf.scene;
-		pandorasBox.add(box_body);
-		camera.lookAt(pandorasBox.position);
-	},
-	undefined,
-	function (error) {
-		console.log(error);
-	}
+  "P_Box/scene.gltf",
+  function (gltf) {
+    box_body = gltf.scene;
+    pandorasBox.add(box_body);
+    camera.lookAt(pandorasBox.position);
+  },
+  undefined,
+  function (error) {
+    console.log(error);
+  }
 );
 
 // adding lights to the scene
@@ -98,8 +98,8 @@ const raycaster = new THREE.Raycaster();
 
 // determining where the pointer is
 function onPointerMove(event) {
-	pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-	pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+  pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
 }
 
 const title = document.querySelector(".homepage-title");
@@ -115,44 +115,44 @@ let loops = [];
 	we want the box to rotate to front when the user clicks on it
 */
 function isHittingBox() {
-	raycaster.setFromCamera(pointer, camera);
-	const intersects = raycaster.intersectObjects(scene.children);
-	return intersects.length > 0;
+  raycaster.setFromCamera(pointer, camera);
+  const intersects = raycaster.intersectObjects(scene.children);
+  return intersects.length > 0;
 }
 
 function startStorySetup() {
-	if (isHittingBox()) {
-		console.log("moving to story");
-		isBoxClicked = true;
-		animation();
-		document
-			.querySelector(".scene3")
-			.classList.remove(
-				"hidden"
-			); /*thi makes the scene 3 hidden in the landing page but will show up in the storybase starts */
-	}
+  if (isHittingBox()) {
+    console.log("moving to story");
+    isBoxClicked = true;
+    animation();
+    document
+      .querySelector(".scene3")
+      .classList.remove(
+        "hidden"
+      ); /*thi makes the scene 3 hidden in the landing page but will show up in the storybase starts */
+  }
 }
 
 function animation() {
-	const tl = gsap.timeline({});
-	tl.to(pandorasBox.rotation, {
-		duration: 0.5,
-		y: -1.55,
-		onComplete: () => {
-			title.setAttribute("class", "homepage-title-animated");
-		},
-	})
-		.to(box_lid.rotation, { duration: 1, z: 1 }, "box_lid") // seting this label on both tweens makes them play at the same time ;)
-		.to(
-			box_lid.position,
-			{ duration: 1, y: 1, onComplete: () => (isBoxOpen = true) },
-			"box_lid"
-		)
-		.to(
-			camera.position,
-			{ duration: 2, z: -0.5, y: 1, onComplete: () => startStory() },
-			"box_lid"
-		);
+  const tl = gsap.timeline({});
+  tl.to(pandorasBox.rotation, {
+    duration: 0.5,
+    y: -1.55,
+    onComplete: () => {
+      title.setAttribute("class", "homepage-title-animated");
+    },
+  })
+    .to(box_lid.rotation, { duration: 1, z: 1 }, "box_lid") // seting this label on both tweens makes them play at the same time ;)
+    .to(
+      box_lid.position,
+      { duration: 1, y: 1, onComplete: () => (isBoxOpen = true) },
+      "box_lid"
+    )
+    .to(
+      camera.position,
+      { duration: 2, z: -0.5, y: 1, onComplete: () => startStory() },
+      "box_lid"
+    );
 }
 
 /*
@@ -214,12 +214,12 @@ pandorasBox.rotation.y = -1.55;
 let raf;
 
 function update() {
-	loops.push(requestAnimationFrame(update));
-	renderer.render(scene, camera);
-	if (!isBoxClicked) {
-		pandorasBox.rotateY(-0.003);
-	}
-	console.log("update");
+  loops.push(requestAnimationFrame(update));
+  renderer.render(scene, camera);
+  if (!isBoxClicked) {
+    pandorasBox.rotateY(-0.003);
+  }
+  console.log("update");
 }
 
 /*
@@ -230,45 +230,46 @@ function update() {
 	! Since the end is blackout, should be good to have in the beginning of the story black screen that slowly fades to an image so the transition isn't too abrupt
 */
 function startStory() {
-	window.removeEventListener("pointermove", onPointerMove);
-	window.removeEventListener("click", startStorySetup);
+  window.removeEventListener("pointermove", onPointerMove);
+  window.removeEventListener("click", startStorySetup);
 
-	const pandorasBoxContainer = document.getElementById(
-		"pandoras-box-container"
-	);
-	pandorasBoxContainer.classList.add("pandoras-box-container-fadeOut");
-	for (const loop of loops) {
-		cancelAnimationFrame(loop);
-	}
+  const pandorasBoxContainer = document.getElementById(
+    "pandoras-box-container"
+  );
+  pandorasBoxContainer.classList.add("pandoras-box-container-fadeOut");
+  for (const loop of loops) {
+    cancelAnimationFrame(loop);
+  }
 
-	console.log("endOfLoops");
+  console.log("endOfLoops");
 
-	pandorasBoxContainer.addEventListener(
-		"animationend",
-		() => {
-			pandorasBoxContainer.style.display = "none";
-			renderer.dispose();
+  pandorasBoxContainer.addEventListener(
+    "animationend",
+    () => {
+      pandorasBoxContainer.style.display = "none";
+      renderer.dispose();
 
-			const storyBase = document.querySelector(".storybase");
-			// const scene1 = storyBase.querySelector(".scene1");
-			// const scene2 = storyBase.querySelector(".scene2");
-			const scene3 = storyBase.querySelector(".scene3");
-			const scene4 = storyBase.querySelector(".scene4");
-			const scene5 = storyBase.querySelector(".scene5");
-			const scene6 = storyBase.querySelector(".scene6");
+      const storyBase = document.querySelector(".storybase");
+      // const scene1 = storyBase.querySelector(".scene1");
+      // const scene2 = storyBase.querySelector(".scene2");
+      const scene3 = storyBase.querySelector(".scene3");
+      const scene4 = storyBase.querySelector(".scene4");
+      const scene5 = storyBase.querySelector(".scene5");
+      const scene6 = storyBase.querySelector(".scene6");
+      const scene7 = storyBase.querySelector(".scene7");
+      // scene1.classList.add("scene-visible");
+      // scene2.classList.add("scene-visible");
+      scene3.classList.add("scene-visible");
+      scene4.classList.add("scene-visible");
+      scene5.classList.add("scene-visible");
+      scene6.classList.add("scene-visible");
+      scene7.classList.add("scene-visible");
 
-			// scene1.classList.add("scene-visible");
-			// scene2.classList.add("scene-visible");
-			scene3.classList.add("scene-visible");
-			scene4.classList.add("scene-visible");
-			scene5.classList.add("scene-visible");
-			scene6.classList.add("scene-visible");
-
-			// animation to move text from off-screen to the desired position
-			// const sceneText = document.getElementById("scene-text1");
-			// sceneText.classList.add("animate-in");
-		},
-		{ once: true }
-	);
+      // animation to move text from off-screen to the desired position
+      // const sceneText = document.getElementById("scene-text1");
+      // sceneText.classList.add("animate-in");
+    },
+    { once: true }
+  );
 }
 update();
