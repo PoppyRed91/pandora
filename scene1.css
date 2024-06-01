@@ -1,0 +1,91 @@
+/* body {
+    
+    background-image: url("../public/background.png");
+    
+    
+  }
+
+  .scroll-watcher {
+    height: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    background-color: bisque;
+    width: 100%;
+    scale: 0 1;
+    transform-origin: left;
+    animation: scroll-watcher linear;
+    animation-timeline: scroll();
+
+  }
+
+  @keyframes scroll-watcher {
+    to { scale: 1 1;}
+  }
+  
+  .scene1-container {
+    height: 96vh;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    perspective: 10px;
+    transform-style: preserve-3d;
+    gap: 20px;
+    
+
+  }
+  .text {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 32px;
+    max-width: 1000px;
+    line-height: 36px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    animation: fade-out linear;
+    animation-timeline: view();
+    animation-range: exit -200px;
+    
+    
+  }
+
+@keyframes fade-out {
+    to { opacity: 0;}
+}
+
+  .img-container {
+    display: flex;
+    margin: 0 auto;
+width: 1300px;
+height: 820px;
+position: relative;
+transform-style: preserve-3d;
+    z-index: -1;
+    object-fit: cover;
+
+
+  }
+
+  
+  .background {
+    transform: translateZ(-10px) scale(2);
+z-index: -1;
+
+  }
+  
+  .character {
+    position: absolute;
+    bottom: -115px;
+        right: 90px;
+        width: 30%;
+transform: translateZ(-5px) scale(1.5);
+z-index: -1;
+
+  }
+  
+   */
