@@ -143,11 +143,11 @@ html {
   display: block;
   border: 10px solid black;
   box-sizing: border-box;
-  margin-top: 60rem;
+
+  background-color: black;
 }
 
 .smoke-effect {
-  margin-top: 60rem;
   position: absolute;
   top: 50;
   left: 5;
