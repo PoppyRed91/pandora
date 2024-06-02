@@ -1,24 +1,17 @@
 const canvas = document.querySelector("#canvas");
 const ctx = canvas.getContext("2d");
 
-let w, h;
-let ballsPool = [];
-let activeBalls = [];
+let w,
+  h,
+  balls = [];
 let mouse = { x: undefined, y: undefined };
-
-const rgb = ["252, 186, 3", "252, 211, 3"];
-const maxBalls = 20;
-const mouseMoveInterval = 100;
+let rgb = ["252, 186, 3", "252, 211, 3"];
+const maxBalls = 100;
 let lastMouseMoveTime = 0;
-
-window.addEventListener("DOMContentLoaded", init);
-window.addEventListener("resize", resizeReset);
-window.addEventListener("mousemove", mousemove);
-window.addEventListener("mouseout", mouseout);
+const mouseMoveInterval = 50;
 
 function init() {
   resizeReset();
-  createBallsPool();
   animationLoop();
 }
 
@@ -27,21 +20,18 @@ function resizeReset() {
   h = canvas.height = window.innerHeight;
 }
 
-function createBallsPool() {
-  ballsPool = [];
-  for (let i = 0; i < maxBalls; i++) {
-    ballsPool.push(new Ball());
-  }
-}
-
 function animationLoop() {
   ctx.clearRect(0, 0, w, h);
+  ctx.globalCompositeOperation = "lighter";
   drawBalls();
+
+  balls = balls.filter((ball) => ball.time <= ball.ttl);
+
   requestAnimationFrame(animationLoop);
 }
 
 function drawBalls() {
-  activeBalls.forEach((ball) => {
+  balls.forEach((ball) => {
     ball.update();
     ball.draw();
   });
@@ -50,16 +40,16 @@ function drawBalls() {
 function mousemove(e) {
   const currentTime = Date.now();
   if (currentTime - lastMouseMoveTime < mouseMoveInterval) return;
+
   lastMouseMoveTime = currentTime;
+  mouse.x = e.x;
+  mouse.y = e.y;
 
-  mouse.x = e.clientX;
-  mouse.y = e.clientY;
-
-  if (activeBalls.length < maxBalls) {
-    const ball = ballsPool.pop();
-    if (ball) {
-      ball.reset();
-      activeBalls.push(ball);
+  if (balls.length < maxBalls) {
+    for (let i = 0; i < 3; i++) {
+      if (balls.length < maxBalls) {
+        balls.push(new Ball());
+      }
     }
   }
 }
@@ -79,30 +69,41 @@ function easeOutQuart(x) {
 
 class Ball {
   constructor() {
-    this.reset();
-  }
-
-  reset() {
     this.start = {
       x: mouse.x + getRandomInt(-20, 20),
       y: mouse.y + getRandomInt(-20, 20),
-      size: getRandomInt(5, 9),
+      size: getRandomInt(10, 13),
     };
     this.end = {
-      x: this.start.x + getRandomInt(-50, 50),
-      y: this.start.y + getRandomInt(-50, 50),
+      x: this.start.x + getRandomInt(-300, 300),
+      y: this.start.y + getRandomInt(-300, 300),
     };
+
     this.x = this.start.x;
     this.y = this.start.y;
     this.size = this.start.size;
+
     this.color = rgb[getRandomInt(0, rgb.length - 1)];
     this.opacity = 0.5;
+
     this.time = 0;
-    this.ttl = 30;
+    this.ttl = 120;
   }
 
   draw() {
-    ctx.fillStyle = `rgba(${this.color}, ${this.opacity})`;
+    const gradient = ctx.createRadialGradient(
+      this.x,
+      this.y,
+      0,
+      this.x,
+      this.y,
+      this.size
+    );
+    gradient.addColorStop(0, `rgba(${this.color}, ${this.opacity})`);
+    gradient.addColorStop(0.8, `rgba(${this.color}, ${this.opacity * 0.6})`);
+    gradient.addColorStop(1, `rgba(${this.color}, 0)`);
+
+    ctx.fillStyle = gradient;
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
     ctx.closePath();
@@ -111,19 +112,43 @@ class Ball {
 
   update() {
     if (this.time <= this.ttl) {
-      const progress = 1 - (this.ttl - this.time) / this.ttl;
-      const easedProgress = easeOutQuart(progress);
+      let progress = 1 - (this.ttl - this.time) / this.ttl;
+      let easedProgress = easeOutQuart(progress);
       this.size = this.start.size * (1.5 - easedProgress);
-      this.x += (this.end.x - this.x) * 0.1;
-      this.y += (this.end.y - this.y) * 0.1;
-      this.opacity -= 0.01;
-    } else {
-      const index = activeBalls.indexOf(this);
-      if (index !== -1) {
-        activeBalls.splice(index, 1);
-        ballsPool.push(this);
-      }
+      this.x += (this.end.x - this.x) * 0.02;
+      this.y += (this.end.y - this.y) * 0.02;
     }
     this.time++;
   }
 }
+
+window.addEventListener("DOMContentLoaded", init);
+window.addEventListener("resize", resizeReset);
+window.addEventListener("mousemove", mousemove);
+window.addEventListener("mouseout", mouseout);
+
+// GSAP ScrollTrigger animation for the paragraph
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.to(".scene-3-paragraph", {
+  opacity: 0,
+  y: "-45",
+  scrollTrigger: {
+    trigger: ".scene-3-paragraph",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: 1,
+  },
+});
+
+// GSAP ScrollTrigger animation for the image
+gsap.to("#scene3img", {
+  opacity: 0,
+  y: "50",
+  scrollTrigger: {
+    trigger: "#scene3img",
+    start: "top 1%",
+    end: "top 50%",
+    scrub: 1,
+  },
+});
