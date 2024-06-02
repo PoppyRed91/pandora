@@ -186,3 +186,22 @@ html {
 .pandoras-box-container-fadeOut {
   animation: fadeOut 3s forwards; /* Adjust duration as needed */
 }
+
+/* sound */
+
+#sound-toggle {
+  position: fixed;
+  top: 1rem;
+  left: 2rem;
+  cursor: pointer;
+  border: none;
+  width: 40px; /* Adjust width as needed */
+  height: 40px; /* Adjust height as needed */
+  background-color: transparent;
+  background-image: url("/public/musicon.png");
+  background-size: cover;
+}
+
+#sound-toggle.pause {
+  background-image: url("/public/musicoff.png");
+}

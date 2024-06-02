@@ -127,7 +127,6 @@ window.addEventListener("resize", resizeReset);
 window.addEventListener("mousemove", mousemove);
 window.addEventListener("mouseout", mouseout);
 
-// GSAP ScrollTrigger animation for the paragraph
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".scene-3-paragraph", {
@@ -141,7 +140,6 @@ gsap.to(".scene-3-paragraph", {
   },
 });
 
-// GSAP ScrollTrigger animation for the image
 gsap.to("#scene3img", {
   opacity: 0,
   y: "50",

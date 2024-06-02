@@ -272,4 +272,31 @@ function startStory() {
     { once: true }
   );
 }
+
+// sound
+
+document.addEventListener("DOMContentLoaded", () => {
+  const audio = document.getElementById("background-audio");
+  const soundToggle = document.getElementById("sound-toggle");
+
+  soundToggle.addEventListener("click", () => {
+    if (audio.paused) {
+      audio.play().catch((error) => {
+        console.log("Audio play was prevented by the browser:", error);
+      });
+      soundToggle.style.backgroundImage = "url('/public/musicon.png')";
+      soundToggle.classList.remove("pause");
+    } else {
+      audio.pause();
+      soundToggle.style.backgroundImage = "url('/public/musicoff.png')";
+      soundToggle.classList.add("pause");
+    }
+  });
+
+  // Optionally, play audio automatically when the page loads
+  audio.play().catch((error) => {
+    console.log("Audio play was prevented by the browser:", error);
+  });
+});
+
 update();

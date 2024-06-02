@@ -1,10 +1,10 @@
-.start-story{
-  height:100vh;
-  display:flex;
+.start-story {
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
-  color:rgb(170, 170, 170);
+  color: rgb(170, 170, 170);
   opacity: 1;
 }
 

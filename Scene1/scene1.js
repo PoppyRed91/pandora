@@ -1,4 +1,3 @@
-
 let start = gsap
   .timeline({
     scrollTrigger: {
@@ -7,10 +6,11 @@ let start = gsap
       end: "bottom top",
       scrub: 1,
     },
-}).to(".start-story", {
-    opacity: 0,
-    y:-20,
   })
+  .to(".start-story", {
+    opacity: 0,
+    y: -20,
+  });
 
 let tl = gsap
   .timeline({
