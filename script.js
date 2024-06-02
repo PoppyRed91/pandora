@@ -250,15 +250,15 @@ function startStory() {
       renderer.dispose();
 
       const storyBase = document.querySelector(".storybase");
-      // const scene1 = storyBase.querySelector(".scene1");
-      // const scene2 = storyBase.querySelector(".scene2");
+      const scene1 = storyBase.querySelector(".scene1");
+      const scene2 = storyBase.querySelector(".scene2");
       const scene3 = storyBase.querySelector(".scene3");
       const scene4 = storyBase.querySelector(".scene4");
       const scene5 = storyBase.querySelector(".scene5");
       const scene6 = storyBase.querySelector(".scene6");
       const scene7 = storyBase.querySelector(".scene7");
-      // scene1.classList.add("scene-visible");
-      // scene2.classList.add("scene-visible");
+      scene1.classList.add("scene-visible");
+      scene2.classList.add("scene-visible");
       scene3.classList.add("scene-visible");
       scene4.classList.add("scene-visible");
       scene5.classList.add("scene-visible");
