@@ -14,10 +14,11 @@
 }
 .homepage-undertext {
   position: absolute;
-  color: goldenrod;
+  color: #a56118;
   z-index: 20;
   margin-top: 78vh;
   margin-left: 48vw;
+  font-size: x-large;
 }
 .hidden {
   display: none;
