@@ -44,8 +44,8 @@ let tl3 = gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-1-background",
-      start: "top bottom",
-      end: "center top",
+      start: "center bottom",
+      end: "bottom bottom",
       scrub: 1,
     },
   })

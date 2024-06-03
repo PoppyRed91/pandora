@@ -12,7 +12,17 @@
   left: 0;
   top: 0;
 }
-
+.homepage-undertext {
+  position: absolute;
+  color: #a56118;
+  z-index: 20;
+  margin-top: 78vh;
+  margin-left: 48vw;
+  font-size: x-large;
+}
+.hidden {
+  display: none;
+}
 /* Initial homepage title styling */
 .homepage-title {
   position: absolute;
@@ -92,85 +102,6 @@ html {
   background-image: url("./story background.png");
   background-repeat: repeat-y;
   font-family: "Loved by the King";
-}
-
-.scene-text1 {
-  width: 27rem; /* Adjust to the desired width */
-  position: absolute;
-  top: 100px; /* Adjust the top position as needed */
-  left: 50px; /* Adjust the left position as needed */
-  font-family: "Loved by the King";
-  color: #6a5943;
-  font-size: xx-large;
-  white-space: normal;
-  transform: translateX(-100%); /* Initial position off-screen to the left */
-  opacity: 1;
-  transition: transform 6s linear; /* Adjust the transition duration */
-}
-@keyframes slideIn {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(5px); /* Move to the desired position */
-    opacity: 1;
-  }
-}
-.scene-text1.animate-in {
-  animation: slideIn 5s ease-in-out forwards;
-}
-.Zeus {
-  margin-right: 2rem;
-  position: absolute;
-  bottom: 6rem;
-  right: 0; /* Position Zeus image to the right */
-  max-width: 70vw;
-  max-height: 83vh;
-  z-index: 10;
-  border: 10px solid #446a61;
-  box-sizing: border-box;
-}
-
-.closedbox {
-  position: absolute;
-  transform: translateX(5%);
-  max-width: 70vw;
-  max-height: 80vh;
-  z-index: 10;
-  display: block;
-  border: 10px solid black;
-  box-sizing: border-box;
-
-  background-color: black;
-}
-
-.smoke-effect {
-  position: absolute;
-  top: 50;
-  left: 5;
-  width: 100%; /* Cover the entire width of the closedbox */
-  height: 100%;
-  transform: translateX(5%);
-  max-width: 70vw;
-  max-height: 80vh;
-  z-index: 150;
-  animation: moveSmoke 10s linear infinite;
-}
-
-@keyframes moveSmoke {
-  0% {
-    transform: translateX(-2%);
-  }
-  50% {
-    transform: translateX(10%);
-  }
-  100% {
-    transform: translateX(-2%);
-  }
 }
 
 /* Fade out animation for Pandora's box container */

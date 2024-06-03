@@ -1,0 +1,134 @@
+.scene-7-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 2000px;
+
+  align-items: center;
+  justify-content: flex-end;
+}
+.scene-7-paragraph {
+  color: azure;
+  font-size: xx-large;
+}
+.scene.scene7 {
+  background-color: black;
+}
+
+.open-box-birds {
+  margin-top: 9rem;
+  background-color: black;
+
+  max-width: 70vw;
+  max-height: 80vh;
+}
+
+.scene7 {
+  position: relative; /* Ensure proper positioning of SVG and image */
+}
+
+.svg {
+  position: absolute; /* Position SVG absolutely within .scene7 */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.svg--bird {
+  margin-top: 9rem;
+  width: 280px;
+  height: 280px;
+  animation: left-right 5s infinite linear; /* Apply the left-right animation */
+}
+
+.svg--bird-small {
+  margin-top: 27rem; /* Adjust position of the smaller bird */
+  width: 140px; /* Smaller size */
+  height: 140px;
+  animation: left-right-small 7s infinite linear; /* Slightly different animation duration for variety */
+}
+
+.svg--bird-static {
+  margin-top: 36rem; /* Adjust position of the static bird */
+  margin-left: 56rem;
+  width: 200px; /* Adjust size */
+  height: 200px;
+  animation: up-down 3s infinite ease-in-out; /* Apply the up-down animation */
+}
+
+@keyframes left-right {
+  0% {
+    transform: translateX(
+      -100vw
+    ); /* Start from outside the left side of the viewport */
+  }
+  100% {
+    transform: translateX(
+      100vw
+    ); /* Move to the outside right side of the viewport */
+  }
+}
+
+@keyframes left-right-small {
+  0% {
+    transform: translateX(
+      -100vw
+    ); /* Start from outside the left side of the viewport */
+  }
+  100% {
+    transform: translateX(
+      100vw
+    ); /* Move to the outside right side of the viewport */
+  }
+}
+
+@keyframes up-down {
+  0%,
+  100% {
+    transform: translateY(0); /* Starting and ending at the original position */
+  }
+  50% {
+    transform: translateY(-40px); /* Move up by 20px */
+  }
+}
+.spider {
+  display: block;
+  height: 55px;
+  left: 5%;
+  margin-left: 79rem; /* Adjust the margin-left according to your layout */
+  margin-top: -23rem; /* Adjust the margin-top according to your layout */
+  position: absolute;
+  top: 0;
+  width: 55px;
+}
+
+@-webkit-keyframes spider-move {
+  0% {
+    height: 50px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+@keyframes spider-move {
+  0% {
+    height: 50px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
+.spider::before {
+  display: block;
+  content: "";
+  width: 1px;
+  height: 50px; /* Adjust the height according to your layout */
+  background: #efebe4; /* Adjust the background color according to your design */
+  margin-top: 29rem;
+  margin-left: 76rem;
+  margin-bottom: -3px;
+  -webkit-animation: spider-move 4s ease-in-out infinite alternate;
+  animation: spider-move 4s ease-in-out infinite alternate;
+}

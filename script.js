@@ -103,6 +103,7 @@ function onPointerMove(event) {
 }
 
 const title = document.querySelector(".homepage-title");
+const undertext = document.querySelector(".homepage-undertext");
 
 // adding eventListener
 window.addEventListener("pointermove", onPointerMove);
@@ -125,6 +126,7 @@ function startStorySetup() {
     console.log("moving to story");
     isBoxClicked = true;
     animation();
+    undertext.classList.add("hidden");
     document
       .querySelector(".scene3")
       .classList.remove(
@@ -264,6 +266,9 @@ function startStory() {
       scene5.classList.add("scene-visible");
       scene6.classList.add("scene-visible");
       scene7.classList.add("scene-visible");
+
+      // Show closed box and smoke effect
+      showClosedBoxAndSmoke();
 
       // animation to move text from off-screen to the desired position
       // const sceneText = document.getElementById("scene-text1");
