@@ -59,3 +59,11 @@ let tl3 = gsap
     y: "-45",
     stagger: 0.5,
   });
+
+gsap.to("#black-screen", {
+  duration: 3,
+  opacity: 0,
+  onComplete: () => {
+    document.getElementById("black-screen").style.display = "none";
+  },
+});
