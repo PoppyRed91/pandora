@@ -167,7 +167,7 @@
   opacity: 0.69;
   animation-name: particle10;
   animation-delay: -2s;
-  transform: translate3d(14vw, 84vh, 79px);
+  transform: translate3d(14vw, 54vh, 69px);
 }
 
 @keyframes particle10 {
