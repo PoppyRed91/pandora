@@ -44,24 +44,12 @@ let tl3 = gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-1-background",
-      start: "top+=100 bottom",
-      end: "bottom center+=200",
+      start: "center bottom",
+      end: "bottom bottom",
       scrub: 1,
     },
   })
-  .to(".scene-1-text-1", {
+  .to(".scene-1-text", {
     opacity: 1,
-    stagger: 1,
   })
-  .to(".scene-1-text-2", {
-    opacity: 1,
-    stagger: 1,
-  }) 
-  .to(".scene-1-text-3", {
-    opacity: 1,
-    stagger: 1,
-  })
-    .to(".scene-1-text-4",{
-    opacity: 1,
-    stagger: 1,
-  })
+
