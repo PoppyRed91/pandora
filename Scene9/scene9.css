@@ -1,3 +1,6 @@
+.scene.scene9 {
+  background-color: black;
+}
 .scene-9-container {
   display: flex;
   width: 100vw;
@@ -8,7 +11,19 @@
   background-color: black;
   position: relative;
 }
+#scene-9-background {
+  margin-top: 10rem;
+}
 .scene-9-paragraph {
+  padding-top: 5rem;
   color: azure;
   font-size: xx-large;
+  background-color: black;
+  text-align: center;
+}
+.scene-9-overlay {
+  position: absolute;
+  width: 100rem;
+  height: 70rem;
+  z-index: 100;
 }
