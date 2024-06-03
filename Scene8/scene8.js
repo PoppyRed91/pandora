@@ -23,7 +23,7 @@ let tl2 = gsap
     },
   })
   .to(".scene-8-overlay", {
-    x: -250, // Move the overlay 50 pixels to the left
+    x: -310, // Move the overlay 50 pixels to the left
     ease: "power3.out",
   });
 
