@@ -1,16 +1,19 @@
 .scene-8-container {
   display: flex;
+  width: 100vw;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: black;
+  position: relative;
 }
 #scene-8-background {
   margin-top: 9rem;
 }
 .scene-8-overlay {
   position: absolute;
-  top: 676rem;
+  top: 2rem;
   left: 0;
   right: 0;
   bottom: 0;
