@@ -210,7 +210,8 @@ function animation() {
 // 	console.log("zoomIntoBox");
 // }
 
-// elementary rotation of the box when the page loads
+// elementary rotation
+
 pandorasBox.rotation.y = -1.55;
 
 let raf;
@@ -221,7 +222,6 @@ function update() {
   if (!isBoxClicked) {
     pandorasBox.rotateY(-0.003);
   }
-  console.log("update");
 }
 
 /*
@@ -251,21 +251,7 @@ function startStory() {
       pandorasBoxContainer.style.display = "none";
       renderer.dispose();
 
-      const storyBase = document.querySelector(".storybase");
-      const scene1 = storyBase.querySelector(".scene1");
-      const scene2 = storyBase.querySelector(".scene2");
-      const scene3 = storyBase.querySelector(".scene3");
-      const scene4 = storyBase.querySelector(".scene4");
-      const scene5 = storyBase.querySelector(".scene5");
-      const scene6 = storyBase.querySelector(".scene6");
-      const scene7 = storyBase.querySelector(".scene7");
-      scene1.classList.add("scene-visible");
-      scene2.classList.add("scene-visible");
-      scene3.classList.add("scene-visible");
-      scene4.classList.add("scene-visible");
-      scene5.classList.add("scene-visible");
-      scene6.classList.add("scene-visible");
-      scene7.classList.add("scene-visible");
+      window.location.href = "scene.html";
 
       // Show closed box and smoke effect
       showClosedBoxAndSmoke();
@@ -277,31 +263,5 @@ function startStory() {
     { once: true }
   );
 }
-
-// sound
-
-document.addEventListener("DOMContentLoaded", () => {
-  const audio = document.getElementById("background-audio");
-  const soundToggle = document.getElementById("sound-toggle");
-
-  soundToggle.addEventListener("click", () => {
-    if (audio.paused) {
-      audio.play().catch((error) => {
-        console.log("Audio play was prevented by the browser:", error);
-      });
-      soundToggle.style.backgroundImage = "url('/public/musicon.png')";
-      soundToggle.classList.remove("pause");
-    } else {
-      audio.pause();
-      soundToggle.style.backgroundImage = "url('/public/musicoff.png')";
-      soundToggle.classList.add("pause");
-    }
-  });
-
-  // Optionally, play audio automatically when the page loads
-  audio.play().catch((error) => {
-    console.log("Audio play was prevented by the browser:", error);
-  });
-});
 
 update();
