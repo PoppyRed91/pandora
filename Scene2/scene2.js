@@ -59,18 +59,18 @@ let tl5 = gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-2-background",
-      start: "top+=300 bottom",
-      end: "bottom top",
+      start: "top+=200 bottom",
+      end: "center top",
       scrub: 1,
     },
   })
   .to(".scene-2-text", {
     opacity: 1,
-    y: "45",
-    stagger: 1,
+    y: "20",
+    stagger: 0.3,
   })
   .to(".scene-2-text", {
     opacity: 0,
-    y: "-45",
-    stagger: 0.5,
+    y: "-20",
+    stagger: 0.3,
   });
