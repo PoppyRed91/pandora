@@ -6,9 +6,9 @@ let w,
   balls = [];
 let mouse = { x: undefined, y: undefined };
 let rgb = ["252, 186, 3", "252, 211, 3"];
-const maxBalls = 100;
+const maxBalls = 60;
 let lastMouseMoveTime = 0;
-const mouseMoveInterval = 50;
+const mouseMoveInterval = 30;
 
 function init() {
   resizeReset();
