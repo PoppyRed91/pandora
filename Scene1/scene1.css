@@ -28,8 +28,27 @@
   font-size: 1.3rem;
 }
 
-.scene-1-text {
+.scene-1-text-1{
+top:110%;
+}
+
+.scene-1-text-2{
+top:130%;
+}
+
+.scene-1-text-3{
+top:140%;
+}
+
+.scene-1-text-4{
+top:160%;
+}
+
+
+.scene-1-text-1, .scene-1-text-2, .scene-1-text-3, .scene-1-text-4 {
   opacity: 0;
+  position:absolute;
+  width:20%;
 }
 .scene-1-text-end {
   opacity: 0;

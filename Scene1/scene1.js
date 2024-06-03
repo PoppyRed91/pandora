@@ -45,17 +45,31 @@ let tl3 = gsap
     scrollTrigger: {
       trigger: ".scene-1-background",
       start: "top bottom",
-      end: "center top",
+      end: "bottom top",
       scrub: 1,
     },
   })
-  .to(".scene-1-text", {
+  .to(".scene-1-text-1", {
     opacity: 1,
-    y: "45",
-    stagger: 1,
   })
-  .to(".scene-1-text", {
+  .to(".scene-1-text-1", {
     opacity: 0,
-    y: "-45",
-    stagger: 0.5,
+  })
+  .to(".scene-1-text-2", {
+    opacity: 1,
+  })
+  .to(".scene-1-text-2", {
+    opacity: 0,
+  })  
+  .to(".scene-1-text-3", {
+    opacity: 1,
+  })
+  .to(".scene-1-text-3", {
+    opacity: 0,
+  })
+    .to(".scene-1-text-4",{
+    opacity: 1,
+  })
+  .to(".scene-1-text-4", {
+    opacity: 0,
   });
