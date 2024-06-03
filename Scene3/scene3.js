@@ -6,9 +6,9 @@ let w,
   balls = [];
 let mouse = { x: undefined, y: undefined };
 let rgb = ["252, 186, 3", "252, 211, 3"];
-const maxBalls = 60;
+const maxBalls = 50;
 let lastMouseMoveTime = 0;
-const mouseMoveInterval = 30;
+const mouseMoveInterval = 50;
 
 function init() {
   resizeReset();
@@ -46,7 +46,7 @@ function mousemove(e) {
   mouse.y = e.y;
 
   if (balls.length < maxBalls) {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 2; i++) {
       if (balls.length < maxBalls) {
         balls.push(new Ball());
       }
@@ -64,7 +64,7 @@ function getRandomInt(min, max) {
 }
 
 function easeOutQuart(x) {
-  return 1 - Math.pow(1 - x, 4);
+  return 1 - Math.pow(1 - x, 3);
 }
 
 class Ball {
@@ -84,7 +84,8 @@ class Ball {
     this.size = this.start.size;
 
     this.color = rgb[getRandomInt(0, rgb.length - 1)];
-    this.opacity = 0.5;
+    this.initialOpacity = 0.5; // Initial opacity
+    this.opacity = this.initialOpacity; // Current opacity
 
     this.time = 0;
     this.ttl = 120;
@@ -117,6 +118,9 @@ class Ball {
       this.size = this.start.size * (1.5 - easedProgress);
       this.x += (this.end.x - this.x) * 0.02;
       this.y += (this.end.y - this.y) * 0.02;
+
+      // to fade
+      this.opacity = this.initialOpacity * easeOutQuart(1 - progress);
     }
     this.time++;
   }
