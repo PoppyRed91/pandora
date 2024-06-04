@@ -36,7 +36,7 @@
 /* Animation for the delayed text */
 .delayed {
   opacity: 0;
-  animation: fadeIn 2s 6s forwards;
+  animation: fadeIn 2s 8s forwards;
 }
 
 @keyframes fadeIn {
@@ -53,7 +53,7 @@
 /* Animation for the delayed span */
 .delayed-span {
   opacity: 0;
-  animation: fadeIn 2s 10s forwards;
+  animation: fadeIn 2s 13s forwards;
 }
 
 .placeholder-white {
@@ -114,7 +114,7 @@
   justify-content: center;
 }
 
-=======>>>>>>>8cfa477a84d1e8ac22963a316b078b549e57eb .scene-1-background {
+.scene-1-background {
   position: relative;
   opacity: 0;
   height: auto;
