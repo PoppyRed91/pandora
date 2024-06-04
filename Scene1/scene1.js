@@ -1,17 +1,3 @@
-let start = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".start-story",
-      start: "center center",
-      end: "bottom top",
-      scrub: 1,
-    },
-  })
-  .to(".start-story", {
-    opacity: 0,
-    y: -20,
-  });
-
 let tl = gsap
   .timeline({
     scrollTrigger: {

@@ -4,6 +4,7 @@
   flex-direction: row-reverse;
   justify-content: space-between;
   background-color: black;
+  width:100vw;
 }
 .closedbox {
   max-width: 70vw;
