@@ -2,9 +2,7 @@
   color: white;
   font-size: 4rem;
   text-decoration: none;
-
   bottom: 0;
-  right: 0;
 }
 
 .finish-link:hover {
@@ -16,8 +14,8 @@
   background-color: black;
   position: relative;
   display: flex;
-  align-items: center;
+  align-items: end;
   justify-content: flex-end;
-  width: 100vw;
-  margin-left: -2rem;
+  width: 96vw;
+  padding: 3rem;
 }
