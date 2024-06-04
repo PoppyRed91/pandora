@@ -39,7 +39,8 @@ let tl3 = gsap
     opacity: 1,
     y: "45",
     stagger: 0.05,
-  }).to(".lens-flare", {
+  })
+  .to(".lens-flare", {
     opacity: 1,
     y: "45",
     stagger: 0.05,
@@ -47,11 +48,13 @@ let tl3 = gsap
   .to(".scene-1-text", {
     opacity: 1,
     stagger: 0.05,
-  }).to(".scene-1-text-container", {
+  })
+  .to(".scene-1-text-container", {
     opacity: 0.5,
     y: "-35",
     stagger: 0.05,
-  }).to(".lens-flare", {
+  })
+  .to(".lens-flare", {
     opacity: 0.5,
     y: "-35",
     stagger: 0.05,
@@ -59,7 +62,7 @@ let tl3 = gsap
   .to(".scene-1-text", {
     opacity: 0,
     stagger: 0.05,
-  })
+  });
 
 gsap.to("#black-screen", {
   duration: 3,
