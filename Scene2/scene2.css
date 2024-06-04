@@ -8,12 +8,24 @@
   background: linear-gradient(#ffffff, #000000);
   padding-bottom:50vh;
   margin: 0 auto;
+  width:100vw;
 }
 
 .scene-2-wrapper {
   display: flex;
   padding: 2rem;
   justify-content: center;
+}
+
+.scene-2-container {
+  display: flex;
+  position: relative;
+  max-width: 1400px;
+  align-items: end;
+  justify-content: center;
+  overflow: hidden;
+  width: 75%;
+  height: 75%;
 }
 
 .scene-2-text-container {
@@ -44,17 +56,6 @@
 .scene-2-text {
   font-size: 1.7rem;
 }
-}
-
-.scene-2-container {
-  display: flex;
-  position: relative;
-  max-width: 1400px;
-  align-items: end;
-  justify-content: center;
-  overflow: hidden;
-  width: 75%;
-  height: 75%;
 }
 
 .scene-2-background {

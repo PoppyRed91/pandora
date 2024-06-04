@@ -1,10 +1,9 @@
 .scene-7-container {
   display: flex;
   flex-direction: row;
-  max-width: 2000px;
-
   align-items: center;
   justify-content: flex-end;
+  width:100vw;
 }
 .scene-7-paragraph {
   color: azure;
@@ -12,6 +11,7 @@
 }
 .scene.scene7 {
   background-color: black;
+    width:100vw;
 }
 
 .open-box-birds {

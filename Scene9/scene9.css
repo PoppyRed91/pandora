@@ -20,6 +20,7 @@
   font-size: xx-large;
   background-color: black;
   text-align: center;
+  width:100vw;
 }
 .scene-9-overlay {
   position: absolute;
