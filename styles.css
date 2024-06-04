@@ -131,6 +131,7 @@ html {
   background-color: transparent;
   background-image: url("/public/musicon.png");
   background-size: cover;
+  z-index: 100; /* Ensure it appears on top of other elements */
 }
 
 #sound-toggle.pause {

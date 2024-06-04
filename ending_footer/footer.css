@@ -1,0 +1,25 @@
+.finish-link {
+  color: white;
+  font-size: 4rem;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin-right: 2rem;
+}
+
+.finish-link:hover {
+  color: #ffd500;
+}
+
+.finish-link-container {
+  min-height: 10rem;
+  background-color: black;
+  position: relative;
+  padding-right: 7rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align everything to the right */
+  right: 0;
+}
