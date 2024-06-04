@@ -64,7 +64,7 @@ function getRandomInt(min, max) {
 }
 
 function easeOutQuart(x) {
-  return 1 - Math.pow(1 - x, 3);
+  return 1 - Math.pow(1 - x, 4);
 }
 
 class Ball {
@@ -134,26 +134,23 @@ window.addEventListener("mouseout", mouseout);
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.from("#scene3img", {
-  opacity: 0, // Set initial opacity to 0 for fade-in effect
-  y: "50", // Start the image animation from a higher position
-  duration: 1, // Duration of the animation
+  opacity: 0,
+  y: "50",
+  duration: 1,
   scrollTrigger: {
     trigger: "#scene3img",
-    start: "top 90%", // Start the animation when the top of the image is 90% in view
-    end: "top 50%", // End the animation when the top of the image is 50% in view
+    start: "top 90%",
+    end: "top -5%",
     scrub: 1,
-    markers: true, // Remove this in production
   },
 });
-
-// fade out
 
 gsap.to("#scene3img", {
   opacity: 0,
   y: "50",
   scrollTrigger: {
     trigger: "#scene3img",
-    start: "top 1%",
+    start: "top -20%",
     end: "top 50%",
     scrub: 1,
   },
@@ -165,9 +162,8 @@ gsap.to(".scene-3-paragraph", {
   duration: 1,
   scrollTrigger: {
     trigger: ".scene-3-paragraph",
-    start: "top 50%", // Start the animation when top of paragraph reaches 50% of viewport
-    end: "top 30%", // End the animation when top of paragraph reaches 30% of viewport
+    start: "top 50%",
+    end: "top 30%",
     scrub: 1,
-    markers: true, // remove this in production
   },
 });
