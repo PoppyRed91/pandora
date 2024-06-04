@@ -7,8 +7,10 @@
   font-size: 2rem;
   color: rgb(170, 170, 170);
   opacity: 1;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  max-width:1000px;
+  margin:0 auto;
+  text-align: center;
+  padding:2rem;
 }
 
 /* animation to the start-story_p elements */
@@ -49,7 +51,6 @@
   align-items: center;
   overflow: hidden;
   position: relative;
-  max-width: 2000px;
   justify-content: center;
 }
 
