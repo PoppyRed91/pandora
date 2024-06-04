@@ -26,7 +26,18 @@ let t2 = gsap
     y: -40,
   });
 
-let tl3 = gsap
+  let t3 = gsap
+  .timeline({ scrollTrigger: { trigger: ".scene-1-character", scrub: 1 } })
+  .to(".scene-1-fire", {
+    y: 40,
+    opacity: 0.6,
+  })
+  .to(".scene-1-fire", {
+    opacity: 0,
+    y: -40,
+  });
+
+let tl4 = gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-1-background",
