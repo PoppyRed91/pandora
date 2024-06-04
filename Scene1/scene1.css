@@ -93,9 +93,6 @@
 .scene-1-background {
   position: relative;
   opacity: 0;
-  /* width: 90%;
-  height: 90%; */
-  height:90vh;
   height:auto;
   overflow: hidden;
   object-fit: cover;
