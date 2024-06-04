@@ -133,16 +133,20 @@ window.addEventListener("mouseout", mouseout);
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".scene-3-paragraph", {
-  opacity: 0,
-  y: "-45",
+gsap.from("#scene3img", {
+  opacity: 0, // Set initial opacity to 0 for fade-in effect
+  y: "50", // Start the image animation from a higher position
+  duration: 1, // Duration of the animation
   scrollTrigger: {
-    trigger: ".scene-3-paragraph",
-    start: "top 80%",
-    end: "top 50%",
+    trigger: "#scene3img",
+    start: "top 90%", // Start the animation when the top of the image is 90% in view
+    end: "top 50%", // End the animation when the top of the image is 50% in view
     scrub: 1,
+    markers: true, // Remove this in production
   },
 });
+
+// fade out
 
 gsap.to("#scene3img", {
   opacity: 0,
@@ -152,5 +156,18 @@ gsap.to("#scene3img", {
     start: "top 1%",
     end: "top 50%",
     scrub: 1,
+  },
+});
+
+gsap.to(".scene-3-paragraph", {
+  opacity: 0,
+  y: "-25",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".scene-3-paragraph",
+    start: "top 50%", // Start the animation when top of paragraph reaches 50% of viewport
+    end: "top 30%", // End the animation when top of paragraph reaches 30% of viewport
+    scrub: 1,
+    markers: true, // remove this in production
   },
 });
