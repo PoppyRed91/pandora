@@ -1,6 +1,6 @@
 /* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Loved+by+the+King:regular");
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
 
 /* Styles for the Pandora's box container */
 #pandoras-box-container {
@@ -101,7 +101,7 @@ html {
   height: 100%;
   background-image: url("./story background.png");
   background-repeat: repeat-y;
-  font-family: "Loved by the King";
+  font-family: "Special Elite", system-ui;
 }
 
 /* Fade out animation for Pandora's box container */
