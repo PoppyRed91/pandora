@@ -9,8 +9,7 @@
   position: relative;
 }
 #scene-8-background {
-  margin-top: 69rem;
-  z-index: 100;
+  margin-top: 9rem;
 }
 .scene-8-overlay {
   position: absolute;
@@ -22,11 +21,9 @@
   width: 40%;
   height: 70%;
   z-index: 250;
-  margin-top: 36rem;
 }
 .scene-8-paragraph {
   background-color: black;
   color: azure;
   font-size: xx-large;
-  z-index: 800;
 }
