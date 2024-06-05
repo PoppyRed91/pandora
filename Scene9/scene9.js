@@ -10,15 +10,15 @@ let tlScene9 = gsap.timeline({
 
 // Animate the margin-top of the overlay to move it upwards
 tlScene9.to("#scene-9-box", {
-  marginTop: "19rem", // Adjust this value to control the final position
-  ease: "power3.out",
+  marginTop: "53rem", // Adjust this value to control the final position
+  ease: "power1.out",
 });
 
 // Animate the background to become darker
 tlScene9.to(
   "#scene-9-background",
   {
-    opacity: 0.2, // Adjust this value to control how dark the background gets
+    opacity: 0.4, // Adjust this value to control how dark the background gets
     ease: "power3.out",
   },
   0

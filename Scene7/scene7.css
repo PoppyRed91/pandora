@@ -1,4 +1,5 @@
 .scene-7-container {
+  margin-top: 60rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -8,8 +9,23 @@
 .scene-7-paragraph {
   color: azure;
   font-size: xx-large;
+  animation: fadeInAnimation ease 7s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: forwards;
+}
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .scene.scene7 {
+  padding: 4rem;
   background-color: black;
     width:100vw;
 }
@@ -35,21 +51,21 @@
 }
 
 .svg--bird {
-  margin-top: 9rem;
+  margin-top: 72rem;
   width: 280px;
   height: 280px;
   animation: left-right 5s infinite linear; /* Apply the left-right animation */
 }
 
 .svg--bird-small {
-  margin-top: 27rem; /* Adjust position of the smaller bird */
+  margin-top: 76rem; /* Adjust position of the smaller bird */
   width: 140px; /* Smaller size */
   height: 140px;
   animation: left-right-small 7s infinite linear; /* Slightly different animation duration for variety */
 }
 
 .svg--bird-static {
-  margin-top: 36rem; /* Adjust position of the static bird */
+  margin-top: 98rem; /* Adjust position of the static bird */
   margin-left: 56rem;
   width: 200px; /* Adjust size */
   height: 200px;
@@ -96,7 +112,7 @@
   height: 55px;
   left: 5%;
   margin-left: 79rem; /* Adjust the margin-left according to your layout */
-  margin-top: -23rem; /* Adjust the margin-top according to your layout */
+  margin-top: 41rem; /* Adjust the margin-top according to your layout */
   position: absolute;
   top: 0;
   width: 55px;
