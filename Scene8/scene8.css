@@ -13,13 +13,13 @@
 }
 .scene-8-overlay {
   position: absolute;
-  top: -13rem;
+  top: -9rem;
   left: 0;
   right: 0;
   bottom: 0;
   margin: auto;
-  width: 40%;
-  height: 50%;
+  width: 42%;
+  height: 46%;
   z-index: 250;
 }
 .scene-8-paragraph {

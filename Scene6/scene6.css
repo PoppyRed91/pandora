@@ -6,22 +6,13 @@
   background-color: black;
   width: 100vw;
   min-height: 100vh;
+  padding: 2rem;
 }
 .closedbox {
   max-width: 70vw;
   max-height: 80vh;
 }
-/*.closedbox {
-    position: absolute;
-    transform: translateX(0%);
-    max-width: 70vw;
-    max-height: 80vh;
-    z-index: 10;
-    display: block;
-    display: none;
-    background-color: black !important;
-  }
-  */
+
 .smoke-container {
   position: relative;
 }
@@ -56,5 +47,6 @@
   flex: 1;
   margin-left: 3rem;
   color: azure;
-  font-size: xx-large;
+  font-size: x-large;
+  padding-right: 2rem;
 }

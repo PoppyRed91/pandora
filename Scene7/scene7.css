@@ -13,12 +13,13 @@
 .scene.scene7 {
   background-color: black;
   width: 100vw;
+  padding: 2rem;
 }
 
 .open-box-birds {
   margin-top: 9rem;
   background-color: black;
-
+  padding-right: 2rem;
   max-width: 70vw;
   max-height: 80vh;
 }
@@ -50,7 +51,7 @@
 }
 
 .svg--bird-static {
-  margin-top: 40rem; /* Adjust position of the static bird */
+  margin-top: 63rem; /* Adjust position of the static bird */
   margin-left: 56rem;
   width: 200px; /* Adjust size */
   height: 200px;
