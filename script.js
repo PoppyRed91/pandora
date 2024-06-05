@@ -265,3 +265,15 @@ function startStory() {
 }
 
 update();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const blackOverlay = document.getElementById("black-overlay");
+
+  // Start with the black overlay fully opaque
+  blackOverlay.style.opacity = "1";
+
+  // Remove the overlay after the animation completes
+  blackOverlay.addEventListener("animationend", () => {
+    blackOverlay.style.display = "none";
+  });
+});
