@@ -1,14 +1,15 @@
 .start-story {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  text-align: center;
   align-items: center;
   font-size: 2rem;
   color: rgb(170, 170, 170);
   opacity: 1;
   margin-left: 5rem;
   margin-right: 5rem;
+  flex-direction: column;
 }
 
 /* animation to the start-story_p elements */
@@ -32,6 +33,27 @@
   }
 }
 
+.delayed {
+  opacity: 0;
+  animation: fadeIn 2s 6s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.delayed-span {
+  opacity: 0;
+  animation: fadeIn 2s 10s forwards;
+}
+
 .placeholder-white {
   background-color: white;
   height: 50vh;
@@ -44,59 +66,64 @@
   align-items: left;
 }
 
-.lens-flare{
-  position:absolute;
+.scene-1-fire {
+  position: absolute;
+  top: 25%;
+  right: 26%;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.lens-flare {
+  position: absolute;
   text-align: center;
   box-shadow: 0px 2px 55px rgba(255, 255, 243, 0.6);
-  background:rgba(255, 255, 243, 0.4);
-  border-radius:50%;
-  height:18%;
-  width:11%;
-  top:7%;
-  left:27%;
-  opacity:0.5;
+  background: rgba(255, 255, 243, 0.4);
+  border-radius: 50%;
+  height: 18%;
+  width: 12%;
+  top: 7%;
+  left: 27%;
+  opacity: 0.5;
 }
 
 .scene-1-text-container {
-  position:absolute;
+  position: absolute;
   text-align: center;
   box-shadow: 0px 2px 55px rgba(255, 255, 243, 0.6);
-  background:rgba(255, 255, 243, 0.4);
-  border-radius:50%;
-  display:flex;
+  background: rgba(255, 255, 243, 0.4);
+  border-radius: 50%;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height:40%;
-  width:25%;
-  top:5%;
-  left:7%;
-  opacity:0.5;
+  height: 40%;
+  width: 27%;
+  top: 8%;
+  left: 3%;
+  opacity: 0.5;
 }
 
 .scene-1-text {
-  width:80%;
+  width: 80%;
   font-size: 1rem;
-  padding:1rem;
+  padding: 1rem;
   opacity: 0;
-  color:rgb(87, 87, 87);
+  color: rgb(87, 87, 87);
 }
-
 
 .scene1-container {
   display: flex;
   align-items: center;
   overflow: hidden;
   position: relative;
-  max-width: 2000px;
   justify-content: center;
-
 }
 
 .scene-1-background {
   position: relative;
   opacity: 0;
-  width: 90%;
-  height: 90%;
+  height: auto;
   overflow: hidden;
   object-fit: cover;
 }
@@ -219,27 +246,107 @@
   }
 }
 
-
 @media screen and (min-width: 768px) {
-.scene-1-text {
-   font-size: 1.3rem;
-}
+  .scene-1-text {
+    font-size: 1.3rem;
+  }
 }
 
 @media screen and (min-width: 1000px) {
-.scene-1-text {
-  font-size: 2rem;
-  width:70%;
+  .scene-1-text {
+    font-size: 2rem;
+    width: 70%;
+  }
+  .scene-1-character {
+    right: -1%;
+    top: 2%;
+  }
+
+  .scene-1-fire {
+    right: 26%;
+    top: 28%;
+  }
 }
-.scene-1-character {
-  right: -1%;
-  top: 2%;
+
+@media screen and (min-width: 1400px) {
+  .lens-flare {
+    height: 19%;
+    width: 12%;
+    top: 7%;
+    left: 27%;
+  }
+
+  .scene-1-text-container {
+    height: 44%;
+    width: 27%;
+    top: 8%;
+    left: 7%;
+  }
 }
+
+@media screen and (min-width: 1600px) {
+  .lens-flare {
+    height: 22%;
+    width: 12%;
+    top: 7%;
+    left: 31%;
+  }
+
+  .scene-1-text-container {
+    height: 47%;
+    width: 25%;
+    top: 8%;
+    left: 14%;
+  }
+
+  .scene-1-character {
+    width: 85%;
+    right: 6.5%;
+  }
+
+  .scene-1-fire {
+    right: 28%;
+  }
+}
+
+@media screen and (min-width: 1800px) {
+  .lens-flare {
+    height: 22%;
+    width: 11%;
+    left: 31%;
+  }
+
+  .scene-1-text-container {
+    width: 23%;
+    left: 15%;
+  }
 }
 
 @media screen and (min-width: 2000px) {
-.scene-1-character{
-  right: 0%;
-  top:4%;
+  .scene-1-character {
+    right: 0%;
+    top: 4%;
+  }
+  .scene-1-character {
+    width: 80%;
+    right: 10%;
+  }
+  .lens-flare {
+    height: 24%;
+    width: 11%;
+  }
+  .scene-1-text-container {
+    width: 22%;
+    left: 17%;
+  }
+  .scene-1-fire {
+    right: 30%;
+  }
 }
+
+#lottie-container {
+  position: absolute;
+  bottom: 20px; /* Adjust as needed */
+  left: 50%;
+  transform: translateX(-50%);
 }

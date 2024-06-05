@@ -64,7 +64,7 @@ function getRandomInt(min, max) {
 }
 
 function easeOutQuart(x) {
-  return 1 - Math.pow(1 - x, 3);
+  return 1 - Math.pow(1 - x, 4);
 }
 
 class Ball {
@@ -133,13 +133,14 @@ window.addEventListener("mouseout", mouseout);
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.to(".scene-3-paragraph", {
+gsap.from("#scene3img", {
   opacity: 0,
-  y: "-45",
+  y: "50",
+  duration: 1,
   scrollTrigger: {
-    trigger: ".scene-3-paragraph",
-    start: "top 80%",
-    end: "top 50%",
+    trigger: "#scene3img",
+    start: "top 90%",
+    end: "top -5%",
     scrub: 1,
   },
 });
@@ -149,8 +150,20 @@ gsap.to("#scene3img", {
   y: "50",
   scrollTrigger: {
     trigger: "#scene3img",
-    start: "top 1%",
+    start: "top -20%",
     end: "top 50%",
+    scrub: 1,
+  },
+});
+
+gsap.to(".scene-3-paragraph", {
+  opacity: 0,
+  y: "-25",
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".scene-3-paragraph",
+    start: "top 50%",
+    end: "top 30%",
     scrub: 1,
   },
 });

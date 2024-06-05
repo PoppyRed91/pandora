@@ -1,17 +1,3 @@
-let start = gsap
-  .timeline({
-    scrollTrigger: {
-      trigger: ".start-story",
-      start: "center center",
-      end: "bottom top",
-      scrub: 1,
-    },
-  })
-  .to(".start-story", {
-    opacity: 0,
-    y: -20,
-  });
-
 let tl = gsap
   .timeline({
     scrollTrigger: {
@@ -40,7 +26,18 @@ let t2 = gsap
     y: -40,
   });
 
-let tl3 = gsap
+let t3 = gsap
+  .timeline({ scrollTrigger: { trigger: ".scene-1-character", scrub: 1 } })
+  .to(".scene-1-fire", {
+    y: 40,
+    opacity: 0.6,
+  })
+  .to(".scene-1-fire", {
+    opacity: 0,
+    y: -40,
+  });
+
+let tl4 = gsap
   .timeline({
     scrollTrigger: {
       trigger: ".scene-1-background",
@@ -51,24 +48,32 @@ let tl3 = gsap
   })
   .to(".scene-1-text-container", {
     opacity: 1,
-    y: "35",
+    y: "45",
     stagger: 0.05,
-  }).to(".lens-flare", {
+  })
+  .to(".lens-flare", {
     opacity: 1,
-    y: "35",
+    y: "45",
     stagger: 0.05,
   })
   .to(".scene-1-text", {
     opacity: 1,
     stagger: 0.05,
-  }).to(".scene-1-text-container", {
+  })
+  .to(".scene-1-text-container", {
     opacity: 0.5,
     y: "-35",
     stagger: 0.05,
-  })  .to(".scene-1-text", {
-    opacity: 0,
+  })
+  .to(".lens-flare", {
+    opacity: 0.5,
+    y: "-35",
     stagger: 0.05,
   })
+  .to(".scene-1-text", {
+    opacity: 0,
+    stagger: 0.05,
+  });
 
 gsap.to("#black-screen", {
   duration: 3,
@@ -77,3 +82,7 @@ gsap.to("#black-screen", {
     document.getElementById("black-screen").style.display = "none";
   },
 });
+
+setTimeout(function () {
+  document.getElementById("lottie-container").style.display = "block";
+}, 12000);

@@ -2,10 +2,9 @@
   margin-top: 60rem;
   display: flex;
   flex-direction: row;
-  max-width: 2000px;
-
   align-items: center;
   justify-content: flex-end;
+  width:100vw;
 }
 .scene-7-paragraph {
   color: azure;
@@ -28,6 +27,7 @@
 .scene.scene7 {
   padding: 4rem;
   background-color: black;
+    width:100vw;
 }
 
 .open-box-birds {

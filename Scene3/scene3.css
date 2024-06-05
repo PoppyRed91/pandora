@@ -7,22 +7,20 @@
   text-align: center;
   min-height: 94vh;
   background-color: black;
-}
-
-.hidden {
-  display: none;
+  width: 100vw;
 }
 
 #scene3img {
-  width: 80%;
-  margin-top: 1rem;
+  width: 90%;
+  margin-top: 10rem;
 }
 
 .scene-3-paragraph {
   color: #ffffff;
   margin-top: 2rem;
   width: 85%;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  font-weight: 200;
 }
 
 .particle {
@@ -33,6 +31,7 @@
   animation-duration: 60s;
   animation-iteration-count: infinite;
   margin-right: 100rem;
+  margin-top: 2rem;
 }
 
 .particle:nth-child(odd) {
@@ -440,6 +439,7 @@
 #canvas {
   position: absolute;
   width: 100%;
+
   height: 100%;
   z-index: 1;
   display: block;

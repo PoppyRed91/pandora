@@ -1,6 +1,16 @@
 /* Importing fonts */
 @import url("https://fonts.googleapis.com/css2?family=Jim+Nightshade&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Loved+by+the+King:regular");
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap");
+
+/* Resetting CSS */
+body {
+  width: 100vw;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /* Styles for the Pandora's box container */
 #pandoras-box-container {
@@ -51,6 +61,11 @@
   }
 }
 
+body {
+  max-width: 2000px;
+  overflow-x: hidden;
+}
+
 /* Animated homepage title styling */
 .homepage-title-animated {
   position: absolute;
@@ -99,9 +114,9 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./story background.png");
-  background-repeat: repeat-y;
-  font-family: "Loved by the King";
+  font-family: "Gowun Batang", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 /* Fade out animation for Pandora's box container */
@@ -138,12 +153,25 @@ html {
   background-image: url("/public/musicoff.png");
 }
 
-#black-screen {
+/* Full-screen black overlay */
+#black-overlay {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: black;
   z-index: 1000;
+  opacity: 1;
+  animation: fadeOut ease-out 2s; /* Use ease-out timing function */
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
