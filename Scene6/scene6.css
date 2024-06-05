@@ -6,25 +6,17 @@
   background-color: black;
 }
 .closedbox {
+  padding: 4rem;
   max-width: 70vw;
   max-height: 80vh;
 }
-/*.closedbox {
-    position: absolute;
-    transform: translateX(0%);
-    max-width: 70vw;
-    max-height: 80vh;
-    z-index: 10;
-    display: block;
-    display: none;
-    background-color: black !important;
-  }
-  */
+
 .smoke-container {
   position: relative;
 }
 
 .smoke-effect {
+  padding: 4rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -55,4 +47,21 @@
   margin-left: 3rem;
   color: azure;
   font-size: xx-large;
+  animation: floating 8s linear infinite;
+}
+.float-box {
+  transform-style: preserve-3d;
+  transform-origin: left;
+  transform: perspective(100px);
+}
+@keyframes floating {
+  0% {
+    transform: translate(0%, 30%);
+  }
+  50% {
+    transform: translate(0%, -30%);
+  }
+  100% {
+    transform: translate(0%, 30%);
+  }
 }

@@ -4,7 +4,7 @@
 .scene-9-container {
   display: flex;
   width: 100vw;
-  height: 100vh;
+  height: 130vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -12,18 +12,31 @@
   position: relative;
 }
 #scene-9-background {
-  margin-top: 10rem;
+  padding: 2rem;
+  margin-top: 150rem;
 }
 .scene-9-paragraph {
-  padding-top: 5rem;
-  color: azure;
-  font-size: xx-large;
+  padding-top: 60rem;
+  color: goldenrod;
+  font-size: 3rem;
   background-color: black;
   text-align: center;
+
+  animation: neon 1s ease infinite;
 }
 .scene-9-overlay {
   position: absolute;
   width: 100rem;
   height: 70rem;
   z-index: 100;
+  padding-top: 108rem;
+}
+@keyframes neon {
+  0%,
+  100% {
+    text-shadow: 0 0 10px #a56118, 0 0 20px #a56118, 0 0 20px #a56118;
+  }
+  50% {
+    text-shadow: 0 0 2px goldenrod, 0 0 5px goldenrod, 0 0 5px #a56118;
+  }
 }
