@@ -10,8 +10,7 @@
 }
 
 .finish-link-container {
-  margin-top: 7rem;
-  min-height: 10rem;
+  min-height: 15rem;
   background-color: black;
   position: relative;
   display: flex;
