@@ -10,12 +10,12 @@
 }
 
 .finish-link-container {
-  min-height: 15rem;
+  min-height: 0.3rem;
   background-color: black;
   position: relative;
   display: flex;
   align-items: end;
   justify-content: flex-end;
   width: 96vw;
-  padding: 3rem;
+  padding: 0.4rem;
 }
