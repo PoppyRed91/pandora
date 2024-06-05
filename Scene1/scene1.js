@@ -26,7 +26,7 @@ let t2 = gsap
     y: -40,
   });
 
-  let t3 = gsap
+let t3 = gsap
   .timeline({ scrollTrigger: { trigger: ".scene-1-character", scrub: 1 } })
   .to(".scene-1-fire", {
     y: 40,
@@ -82,3 +82,7 @@ gsap.to("#black-screen", {
     document.getElementById("black-screen").style.display = "none";
   },
 });
+
+setTimeout(function () {
+  document.getElementById("lottie-container").style.display = "block";
+}, 12000);
